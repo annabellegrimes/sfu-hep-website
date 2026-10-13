@@ -26,19 +26,110 @@
   </header>
   <!-- END HEADER -->
 
-  <main>
-    <div class="wrap">
-      <h1>News</h1>
-      <!-- Newest first. To add news, copy one <li> block. Also update "Latest news" on index.html. -->
-      <ul class="entries">
-        <li><a href="https://www.sfu.ca/physics/news-events/news/2026/neutrino-telescope.html">First P-ONE detector line prepared for deep-sea deployment</a>
-          <div class="meta">August 2026 · SFU News</div>
-          <p>The first P-ONE line was assembled at TRIUMF and tested at Granville Island in June, ahead of deployment off Vancouver Island.</p></li>
-        <li><a href="https://educationnewscanada.com/article/education/level/university/1/1209546/searching-for-the-next-higgs-boson-sfu-team-drives-global-effort-to-boost-science-experiment-at-large-hadron-collider.html">SFU team builds the first petal for the new ATLAS tracker</a>
-          <div class="meta">July 2026</div>
-          <p>The SFU and TRIUMF team will build about 100 of the 400 petals for the High-Luminosity LHC upgrade.</p></li>
-      </ul>
+  <!-- PAGE HERO: see research.html for how this block works. -->
+  <section class="page-hero page-hero-grid">
+    <div class="wrap page-hero-text">
+      <p class="eyebrow">News</p>
+      <h1>What's new in the group</h1>
+      <p class="lead">Detector milestones, discoveries and stories from SFU High Energy Physics and the experiments we work on.</p>
+      <nav class="jump-links" aria-label="On this page">
+        <a href="#group-news">Group news</a>
+        <a href="#atlas-news">ATLAS</a>
+        <a href="#p-one-news">P&#8209;ONE</a>
+      </nav>
     </div>
+  </section>
+
+  <main class="research">
+    <section id="group-news" class="research-section">
+      <div class="wrap">
+        <h2 class="section-title">Group news</h2>
+        <!-- Newest first. To add news, copy one <article class="news-item"> block to the top. The photo is optional: delete the <img> line if there isn't one.
+             Also update "Latest news" on index.html (keep the two newest). -->
+        <div class="news-list">
+          <article class="news-item">
+            <img src="images/p-one-dock.jpg" alt="">
+            <div class="news-body">
+              <p class="news-meta"><span class="tag tag-ocean">P&#8209;ONE</span> August 2026 · SFU News</p>
+              <h3><a href="https://www.sfu.ca/physics/news-events/news/2026/neutrino-telescope.html">First P-ONE detector line prepared for deep-sea deployment</a></h3>
+              <p>The first P-ONE line was assembled at TRIUMF and tested at Granville Island in June, ahead of deployment off Vancouver Island.</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <img src="images/atlas-muon-chambers.jpg" alt="">
+            <div class="news-body">
+              <p class="news-meta"><span class="tag">ATLAS</span> July 2026</p>
+              <h3><a href="https://educationnewscanada.com/article/education/level/university/1/1209546/searching-for-the-next-higgs-boson-sfu-team-drives-global-effort-to-boost-science-experiment-at-large-hadron-collider.html">SFU team builds the first petal for the new ATLAS tracker</a></h3>
+              <p>The SFU and TRIUMF team will build about 100 of the 400 petals for the High-Luminosity LHC upgrade.</p>
+            </div>
+          </article>
+        </div>
+        <p class="credits">Photos: P-ONE line by Simon Fraser University. ATLAS muon chambers by Bernd Gross, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Atlas_Experiment_CERN_(01).JPG">Wikimedia Commons</a>.</p>
+      </div>
+    </section>
+
+    <!-- ATLAS COLLABORATION NEWS: a selection copied from https://atlas.cern/Updates/News (last checked October 2026).
+         The full list is also available as an RSS feed: https://atlas.cern/updates/news/feed.xml
+         Check it every few months and copy new items to the top of this list (keep about eight). -->
+    <section id="atlas-news" class="research-section feed-section feed-atlas">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="tag">ATLAS collaboration</span>
+            <h2 class="section-title">From the ATLAS collaboration</h2>
+            <p class="lead">Selected news from the ATLAS experiment at CERN, including progress on the new Inner Tracker that SFU helps build.</p>
+          </div>
+          <a class="button" href="https://atlas.cern/Updates/News">All ATLAS news</a>
+        </div>
+        <ol class="feed">
+          <li><time datetime="2026-10-13">13 October 2026</time><a href="https://atlas.cern/Updates/News/ITk-Ring-First-Production">A ringing success for the ITk Pixel Detector</a><p>Teams at SLAC loaded detector modules onto the first production ring of the Inner Tracker's pixel system.</p></li>
+          <li><time datetime="2026-09-30">30 September 2026</time><a href="https://atlas.cern/Updates/News/First-ITk-Petals">First petals installed in the ATLAS Inner Tracker Strips Endcap</a><p>The first nine production petals were installed in an ITk Strips endcap at DESY, starting full-scale integration.</p></li>
+          <li><time datetime="2026-08-14">14 August 2026</time><a href="https://atlas.cern/Updates/News/Shielding-on-Move">77 tonnes of ATLAS shielding on the move</a><p>A massive shielding component was moved across CERN's site, the first major transport of the shutdown for the High-Luminosity LHC.</p></li>
+          <li><time datetime="2026-07-30">30 July 2026</time><a href="https://atlas.cern/Updates/News/Summary-ICHEP-2026">Summary of new ATLAS results from ICHEP 2026</a><p>New physics results presented at the International Conference on High Energy Physics.</p></li>
+          <li><time datetime="2026-05-07">7 May 2026</time><a href="https://atlas.cern/Updates/News/Run3-LowIntensity-Operation">ATLAS records vital low-intensity data during special LHC run</a><p>A three-week "quiet" run gives a clearer view of W-boson decays.</p></li>
+          <li><time datetime="2026-03-13">13 March 2026</time><a href="https://atlas.cern/Updates/News/Summary-Moriond-2026">Summary of new ATLAS results from Moriond 2026</a><p>Highlights from the annual Moriond conferences.</p></li>
+          <li><time datetime="2026-02-26">26 February 2026</time><a href="https://atlas.cern/Updates/News/2025-Thesis-Awards">ATLAS 2025 Thesis Awards spotlight the "soul" of the Collaboration</a><p>Celebrating the contributions of PhD students across the experiment.</p></li>
+          <li><time datetime="2025-07-01">1 July 2025</time><a href="https://atlas.cern/Updates/News/First-Oxygen-Run">ATLAS takes a breath of oxygen</a><p>ATLAS records its first-ever collisions of oxygen and neon ions.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- P-ONE COLLABORATION NEWS: copied from https://www.pacific-neutrino.org/main-menu/news (last checked October 2026).
+         That site has no RSS feed, so check it every few months and copy new items to the top of this list. Their dates are written month/day/year. -->
+    <section id="p-one-news" class="research-section feed-section feed-pone">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="tag tag-ocean">P&#8209;ONE collaboration</span>
+            <h2 class="section-title">From the P&#8209;ONE collaboration</h2>
+            <p class="lead">News from the international P&#8209;ONE collaboration, which SFU's Matthias Danninger leads as spokesperson.</p>
+          </div>
+          <a class="button button-ocean" href="https://www.pacific-neutrino.org/main-menu/news">All P&#8209;ONE news</a>
+        </div>
+        <ol class="feed">
+          <li><time datetime="2026-07-01">1 July 2026</time><a href="https://www.pacific-neutrino.org/main-menu/news/successful-wet-test-of-p-one-1-in-vancouvers-granville-island">Successful wet test of P-ONE-1 in Vancouver's Granville Island</a><p>The first detector line passed its final shallow-water test before deployment.</p></li>
+          <li><time datetime="2026-06-11">11 June 2026</time><a href="https://www.pacific-neutrino.org/main-menu/news/successful-integration-of-first-detector-line-p-one-1-1">Completed integration of first detector line P-ONE-1</a><p>P-ONE-1 was integrated and tested in the TRIUMF cleanroom and is ready for deployment.</p></li>
+          <li><time datetime="2025-10-20">20 October 2025</time><a href="https://www.pacific-neutrino.org/main-menu/news/the-p-one-collaboration-mourns-the-passing-of-roger-moore">The P-ONE collaboration mourns the passing of Roger Moore</a><p>Remembering Dr. Roger Moore of the University of Alberta.</p></li>
+          <li><time datetime="2025-03-10">10 March 2025</time><a href="https://www.pacific-neutrino.org/main-menu/news/matthias-danninger-elected-as-next-p-one-spokesperson">Matthias Danninger elected as next P-ONE Spokesperson</a><p>SFU's Matthias Danninger served first as Deputy Spokesperson before taking over the role in 2026.</p></li>
+          <li><time datetime="2024-10-30">30 October 2024</time><a href="https://www.pacific-neutrino.org/main-menu/news/ignacio-taboada-receives-over-15-mio-us-to-build-p-ones-sensor-trigger-system">Ignacio Taboada receives over $1.5 million to build P-ONE's sensor trigger system</a><p>An NSF Major Research Instrumentation grant funds the trigger system.</p></li>
+          <li><time datetime="2023-08-24">24 August 2023</time><a href="https://www.pacific-neutrino.org/main-menu/news/the-recovered-straw-pathfinder-hardware-is-back-in-germany-for-analysis">The recovered STRAW pathfinder hardware is back in Germany for analysis</a><p>Pathfinder instruments were shipped to Germany for checks.</p></li>
+          <li><time datetime="2023-02-16">16 February 2023</time><a href="https://www.pacific-neutrino.org/main-menu/news/elisa-resconi-elected-the-first-spokesperson-of-the-p-one-collaboration">Elisa Resconi elected the first spokesperson of the P-ONE collaboration</a><p>The project's initiator becomes its first spokesperson.</p></li>
+          <li><time datetime="2022-04-26">26 April 2022</time><a href="https://www.pacific-neutrino.org/main-menu/news/erc-advanced-grant-for-p-one-project-of-elisa-resconi">ERC Advanced Grant for P-ONE project of Elisa Resconi</a><p>Funding to develop and deploy the first three P-ONE strings.</p></li>
+          <li><time datetime="2022-02-25">25 February 2022</time><a href="https://www.pacific-neutrino.org/main-menu/news/onc-node-at-cascadia-basin-provides-ideal-conditions-for-p-one">ONC node at Cascadia Basin provides ideal conditions for P-ONE</a><p>STRAW pathfinder data show the seafloor site is well suited to a neutrino telescope.</p></li>
+          <li><time datetime="2020-09-09">9 September 2020</time><a href="https://www.pacific-neutrino.org/main-menu/news/p-one-initiative-for-a-new-large-scale-neutrino-observatory-in-the-pacific-ocean">P-ONE: Initiative for a new, large-scale neutrino observatory in the Pacific Ocean</a><p>The proposal for a neutrino telescope in the Pacific Ocean is announced.</p></li>
+          <li><time datetime="2018-07-18">18 July 2018</time><a href="https://www.pacific-neutrino.org/main-menu/news/the-first-pathfinder-experiment-deployed-on-the-seafloor-of-the-pacific-ocean">The first pathfinder experiment deployed on the seafloor of the Pacific Ocean</a><p>Ocean Networks Canada installs the STRAW pathfinder moorings.</p></li>
+        </ol>
+      </div>
+    </section>
+    <section class="cta">
+      <div class="wrap">
+        <div>
+          <h2>Want to be part of the next story?</h2>
+          <p>Students in the group analyze data, build detectors and learn large-scale computing.</p>
+        </div>
+        <a class="button button-light" href="join.html">How to join</a>
+      </div>
+    </section>
   </main>
 
   <!-- FOOTER: the same block is on every page. -->

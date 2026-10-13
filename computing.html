@@ -26,14 +26,175 @@
   </header>
   <!-- END HEADER -->
 
-  <main>
-    <div class="wrap">
-      <h1>High Performance Computing</h1>
-      <p class="lead">The LHC produces enormous amounts of data, and analyzing and storing it takes powerful computing.</p>
-      <p>SFU hosts the ATLAS-Canada Tier-1 data centre, which processes and stores data from the ATLAS experiment, alongside national research supercomputing at SFU.</p>
-      <p>Students in the group learn to work at this scale, which prepares them for careers both in physics and in big-data computing.</p>
-      <!-- TODO: confirm the current name of SFU's national supercomputer (Cedar was replaced by Fir) and add a link. -->
+  <!-- PAGE HERO: see research.html for how this block works. -->
+  <section class="page-hero">
+    <img class="page-hero-bg" src="images/cern-computer-centre.jpg" alt="">
+    <div class="wrap page-hero-text">
+      <p class="eyebrow">High performance computing</p>
+      <h1>Computing at the scale of the LHC</h1>
+      <p class="lead">The LHC produces enormous amounts of data, and analyzing and storing it takes powerful computing. SFU is home to Canada's ATLAS Tier-1 Data Centre and to Fir, Canada's most powerful academic supercomputer.</p>
+      <nav class="jump-links" aria-label="On this page">
+        <a href="#tier-1">ATLAS Tier-1</a>
+        <a href="#grid">The LHC Computing Grid</a>
+        <a href="#fir">Fir supercomputer</a>
+        <a href="#students">For students</a>
+      </nav>
     </div>
+    <p class="hero-credit">Photo: the CERN Computer Centre, by Florian Hirzinger (www.fh-ap.com), <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:CERN_Server_02.jpg">Wikimedia Commons</a></p>
+  </section>
+
+  <main class="research">
+    <!-- FACTS: sources are the SFU Tier-1 page and the Digital Research Alliance Fir announcement (both linked below). Update if they change. -->
+    <section class="facts">
+      <div class="wrap">
+        <div class="fact"><strong>1 of 10</strong><span>ATLAS Tier-1 data centres worldwide</span></div>
+        <div class="fact"><strong>165,888</strong><span>CPU cores in the Fir supercomputer</span></div>
+        <div class="fact"><strong>640</strong><span>NVIDIA H100 GPUs in Fir</span></div>
+        <div class="fact"><strong>50 PB</strong><span>of high-performance storage on Fir</span></div>
+      </div>
+    </section>
+
+    <!-- ===== TIER-1 ===== -->
+    <section id="tier-1" class="research-section">
+      <div class="wrap">
+        <div class="split">
+          <div>
+            <span class="tag">ATLAS-Canada</span>
+            <h2 class="section-title">The Canadian ATLAS Tier-1 Data Centre</h2>
+            <p class="lead">The Tier-1 Centre at SFU processes data recorded by the ATLAS experiment, so researchers can study particles like the Higgs boson.</p>
+            <p>It is one of ten ATLAS Tier-1 centres in the world, and is run by a consortium of ten Canadian institutions led by SFU and TRIUMF: the ATLAS-Canada collaboration, more than 150 researchers working on every part of the experiment.</p>
+            <p><a href="https://www.sfu.ca/physics/atlas-t1.html">ATLAS Tier-1 Data Centre website →</a></p>
+          </div>
+          <div class="provides">
+            <h3>What the Tier-1 Centre does</h3>
+            <ul class="check-list">
+              <li><strong>Processing.</strong> Computing capacity to process LHC collisions recorded by ATLAS.</li>
+              <li><strong>Storage.</strong> Keeps raw and derived datasets from the experiment.</li>
+              <li><strong>Simulation and analysis.</strong> Runs simulations and physics analysis for researchers.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="split">
+          <div>
+            <h3>History</h3>
+            <!-- Timeline: add a <li> for each milestone. class="done" for past steps, class="now" for what is happening now. -->
+            <ol class="timeline timeline-red">
+              <li class="done"><span class="when">2007–2018</span>The Tier-1 Centre is based at TRIUMF in Vancouver, created with support from the Canada Foundation for Innovation (CFI) and the B.C. Knowledge Development Fund.</li>
+              <li class="done"><span class="when">2018</span>As Canada consolidates research computing into a few national centres, the Tier-1 moves to the SFU data centre that also hosts the national supercomputer.</li>
+              <li class="now"><span class="when">2026</span>A new $5.3 million CFI award expands the centre for the High-Luminosity LHC, when ATLAS will record far more data.</li>
+            </ol>
+          </div>
+          <div>
+            <h3>Partner institutions</h3>
+            <p>ATLAS-Canada brings together SFU and TRIUMF with:</p>
+            <ul class="pill-list">
+              <li>Carleton University</li>
+              <li>McGill University</li>
+              <li>Université de Montréal</li>
+              <li>University of Alberta</li>
+              <li>University of British Columbia</li>
+              <li>University of Toronto</li>
+              <li>University of Victoria</li>
+              <li>York University</li>
+            </ul>
+            <h3>Who runs it</h3>
+            <ul class="contact-list">
+              <li><a href="people.html">Bernd Stelzer</a>, SFU Professor of Physics. Scientific Director.</li>
+              <li>Reda Tafirout, TRIUMF Research Scientist and Head of Scientific Computing. Director of Operations.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GRID ===== -->
+    <section id="grid" class="research-section section-dark">
+      <div class="wrap">
+        <span class="tag tag-neutral">How it fits together</span>
+        <h2 class="section-title">The Worldwide LHC Computing Grid</h2>
+        <p class="lead">No single computer centre could handle all the LHC's data. CERN coordinates a worldwide network of computing centres, linked by grid software so that they act as one large system.</p>
+
+        <!-- Data flow, left to right (top to bottom on phones). Each <li> is one step; the arrows are drawn by the stylesheet. -->
+        <ol class="tiers">
+          <li class="tier">
+            <span class="tier-label">Tier-0</span>
+            <h3>CERN</h3>
+            <p>ATLAS records the collisions, and the data are sent out across the grid.</p>
+          </li>
+          <li class="tier tier-sfu">
+            <span class="tier-label">Tier-1</span>
+            <h3>SFU, Burnaby</h3>
+            <p>One of ten ATLAS Tier-1 centres. Stores and processes ATLAS data for Canada and the world.</p>
+          </li>
+          <li class="tier">
+            <span class="tier-label">Researchers</span>
+            <h3>Physicists worldwide</h3>
+            <p>Run simulations and analyses on the grid, including the SFU group's Higgs and new-physics searches.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== FIR ===== -->
+    <section id="fir" class="research-section section-alt">
+      <div class="wrap">
+        <div class="split">
+          <div>
+            <span class="tag tag-neutral">Cedar Supercomputing Centre</span>
+            <h2 class="section-title">Fir: Canada's fastest academic supercomputer</h2>
+            <p class="lead">Fir became fully operational at SFU in September 2025, replacing the Cedar supercomputer.</p>
+            <p>It is the largest general-purpose research supercomputer in Canada and part of the national platform run with the Digital Research Alliance of Canada. When it launched it ranked 78th on the TOP500 list of the world's supercomputers, the only Canadian system in the top 100.</p>
+            <p>The Cedar Supercomputing Centre serves more than 17,000 researchers, about 70% of them outside B.C., in fields from particle physics to genomics and artificial intelligence. It runs on B.C.'s clean energy.</p>
+            <p><a href="https://alliancecan.ca/en/latest/news/supercomputer-fir-now-fully-operational">Digital Research Alliance announcement →</a><br>
+               <a href="https://www.sfu.ca/sfunews/stories/2025/09/canada-s-fastest-academic-supercomputer-is-now-online-at-sfu-aft.html">SFU News story →</a></p>
+          </div>
+          <dl class="spec-sheet">
+            <div><dt>CPU cores</dt><dd>165,888</dd></div>
+            <div><dt>GPUs</dt><dd>640 × NVIDIA H100 (80 GB)</dd></div>
+            <div><dt>Storage</dt><dd>50 PB high-performance</dd></div>
+            <div><dt>TOP500 rank at launch</dt><dd>78th</dd></div>
+            <div><dt>Investment</dt><dd>Over $80 million</dd></div>
+            <div><dt>Location</dt><dd>SFU Burnaby campus</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STUDENTS ===== -->
+    <section id="students" class="research-section">
+      <div class="wrap">
+        <h2 class="section-title">Learning to compute at scale</h2>
+        <p class="lead">Students in the group learn to work with data at this scale, which prepares them for careers both in physics and in big-data computing.</p>
+        <div class="topic-grid">
+          <div class="topic">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+            <h4>Huge datasets</h4>
+            <p>Analyze ATLAS collision data on the grid, alongside thousands of physicists worldwide.</p>
+          </div>
+          <div class="topic">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><circle cx="7" cy="7" r="1"/><circle cx="7" cy="17" r="1"/></svg>
+            <h4>Supercomputers</h4>
+            <p>Run simulations and analysis on national research computing, right here on campus.</p>
+          </div>
+          <div class="topic">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6M14 4l-4 16"/></svg>
+            <h4>Skills that transfer</h4>
+            <p>Programming, statistics and distributed computing that are valued well beyond physics.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <div>
+          <h2>Interested in physics and big data?</h2>
+          <p>Students who want to do research using the Tier-1 Centre are welcome to get in touch.</p>
+        </div>
+        <a class="button button-light" href="join.html">How to join</a>
+      </div>
+    </section>
   </main>
 
   <!-- FOOTER: the same block is on every page. -->

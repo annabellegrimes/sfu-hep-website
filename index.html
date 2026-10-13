@@ -26,50 +26,216 @@
   </header>
   <!-- END HEADER -->
 
-  <section class="hero">
-    <div class="wrap">
-      <h1>Engaging Fundamental Discovery</h1>
-      <p class="lead">Welcome to the High Energy Physics group at Simon Fraser University. We study the fundamental particles and their interactions, at the Large Hadron Collider and at the bottom of the Pacific Ocean.</p>
+  <!-- HERO: a drawn illustration (no photo) that links the two experiments. It is symmetrical about a straight line
+       across the middle (y = 350): the left half is ATLAS (red), the right half is P-ONE (blue).
+       The headline is centred; the two halves frame it.
+       Left: a collision at x = 260, with particle tracks curving out through the detector layers, mirrored above and below the line.
+       Middle: a neutral particle (dashed) travels along the line to the centre (x = 800), where it makes a charged particle.
+       Right: that particle carries on along the line; its Cherenkov light forms a cone like a boat's wake, with the tip at the
+       particle's current position (x = 1520) and a half-angle of about 49 degrees (the light itself leaves the track at about 41 degrees),
+       lighting up optical modules on three mooring lines.
+       The drawing is plain SVG in this file; colours match the site (red = ATLAS, blue = P-ONE). -->
+  <section class="home-hero home-hero-art">
+    <svg class="hero-art" viewBox="0 0 1600 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="art-bg" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#1c0a10"/>
+          <stop offset="0.5" stop-color="#0d1117"/>
+          <stop offset="1" stop-color="#05263b"/>
+        </linearGradient>
+        <radialGradient id="art-glow-red" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0" stop-color="#ff8a9a" stop-opacity="0.8"/>
+          <stop offset="0.25" stop-color="#a6192e" stop-opacity="0.4"/>
+          <stop offset="1" stop-color="#a6192e" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="art-glow-blue" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0" stop-color="#7cc4e8" stop-opacity="0.3"/>
+          <stop offset="1" stop-color="#0b5f8a" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="art-cone" x1="1" y1="0" x2="0" y2="0">
+          <stop offset="0" stop-color="#7cc4e8" stop-opacity="0.55"/>
+          <stop offset="1" stop-color="#7cc4e8" stop-opacity="0.03"/>
+        </linearGradient>
+        <radialGradient id="art-module" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0" stop-color="#e6f6ff"/>
+          <stop offset="0.45" stop-color="#7cc4e8"/>
+          <stop offset="1" stop-color="#7cc4e8" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <!-- background: red on the left, night in the middle, ocean blue on the right -->
+      <rect width="1600" height="700" fill="url(#art-bg)"/>
+      <circle cx="1320" cy="350" r="420" fill="url(#art-glow-blue)"/>
+
+      <!-- the line everything sits on, straight across the banner -->
+      <line x1="0" y1="350" x2="1600" y2="350" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
+
+      <!-- ===== ATLAS (left): detector layers around the collision point (group shifted left to frame the centred text) ===== -->
+      <g transform="translate(-140 0)">
+      <g fill="none" stroke="#ffffff" stroke-opacity="0.07">
+        <circle cx="400" cy="350" r="55"/>
+        <circle cx="400" cy="350" r="105"/>
+        <circle cx="400" cy="350" r="170" stroke-dasharray="2 10"/>
+        <circle cx="400" cy="350" r="250"/>
+        <circle cx="400" cy="350" r="330" stroke-dasharray="2 14"/>
+      </g>
+      <circle cx="400" cy="350" r="200" fill="url(#art-glow-red)"/>
+
+      <!-- charged particle tracks, curving in the magnetic field; each one has a mirror image below the line -->
+      <g fill="none" stroke="#ff8a9a" stroke-linecap="round">
+        <path d="M400 350 Q 300 270 180 240 T -60 250" stroke-opacity="0.5" stroke-width="2"/>
+        <path d="M400 350 Q 300 430 180 460 T -60 450" stroke-opacity="0.5" stroke-width="2"/>
+        <path d="M400 350 Q 360 240 290 150 T 140 0" stroke-opacity="0.45" stroke-width="1.6"/>
+        <path d="M400 350 Q 360 460 290 550 T 140 700" stroke-opacity="0.45" stroke-width="1.6"/>
+        <path d="M400 350 Q 470 250 500 140 T 540 0" stroke-opacity="0.4" stroke-width="1.4"/>
+        <path d="M400 350 Q 470 450 500 560 T 540 700" stroke-opacity="0.4" stroke-width="1.4"/>
+        <path d="M400 350 Q 520 300 600 250 T 720 140" stroke-opacity="0.3" stroke-width="1.2"/>
+        <path d="M400 350 Q 520 400 600 450 T 720 560" stroke-opacity="0.3" stroke-width="1.2"/>
+      </g>
+      <!-- energy deposits where tracks cross the outer layer (mirrored) -->
+      <g fill="#ff8a9a" fill-opacity="0.55">
+        <rect x="175" y="235" width="10" height="10"/><rect x="175" y="455" width="10" height="10"/>
+        <rect x="286" y="146" width="9" height="9"/><rect x="286" y="545" width="9" height="9"/>
+        <rect x="496" y="136" width="8" height="8"/><rect x="496" y="556" width="8" height="8"/>
+        <rect x="596" y="246" width="8" height="8"/><rect x="596" y="446" width="8" height="8"/>
+      </g>
+      <circle cx="400" cy="350" r="6" fill="#ffffff"/>
+      </g>
+
+      <!-- ===== the crossover: a neutral particle (invisible, so dashed) runs straight to the centre ===== -->
+      <path d="M260 350 L 800 350" stroke="#ffffff" stroke-opacity="0.5" stroke-width="1.6" stroke-dasharray="6 9"/>
+      <circle cx="800" cy="350" r="3.5" fill="#e6f6ff"/>
+
+      <!-- ===== P-ONE (right): the charged particle and its Cherenkov cone (group shifted right to frame the centred text) ===== -->
+      <g transform="translate(120 0)">
+      <polygon points="1400,350 1040,-64 1040,764" fill="url(#art-cone)"/>
+      <g stroke="#7cc4e8" stroke-opacity="0.45" stroke-width="1.2">
+        <line x1="1400" y1="350" x2="1040" y2="-64"/>
+        <line x1="1400" y1="350" x2="1040" y2="764"/>
+      </g>
+      <path d="M680 350 L 1400 350" stroke="#e6f6ff" stroke-opacity="0.9" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="1400" cy="350" r="5" fill="#e6f6ff"/>
+
+      <!-- mooring lines with optical modules, every 70 units; the ones inside the cone are lit -->
+      <g stroke="#7cc4e8" stroke-opacity="0.28" stroke-width="1.5">
+        <line x1="1190" y1="0" x2="1190" y2="700"/>
+        <line x1="1250" y1="0" x2="1250" y2="700"/>
+        <line x1="1310" y1="0" x2="1310" y2="700"/>
+      </g>
+      <g fill="#0b2d42" stroke="#7cc4e8" stroke-opacity="0.55" stroke-width="1.5">
+        <circle cx="1190" cy="70" r="9"/><circle cx="1190" cy="630" r="9"/>
+        <circle cx="1250" cy="70" r="9"/><circle cx="1250" cy="140" r="9"/><circle cx="1250" cy="560" r="9"/><circle cx="1250" cy="630" r="9"/>
+        <circle cx="1310" cy="70" r="9"/><circle cx="1310" cy="140" r="9"/><circle cx="1310" cy="210" r="9"/><circle cx="1310" cy="490" r="9"/><circle cx="1310" cy="560" r="9"/><circle cx="1310" cy="630" r="9"/>
+      </g>
+      <g class="hero-art-lit">
+        <circle cx="1190" cy="140" r="16" fill="url(#art-module)"/>
+        <circle cx="1190" cy="210" r="20" fill="url(#art-module)"/>
+        <circle cx="1190" cy="280" r="23" fill="url(#art-module)"/>
+        <circle cx="1190" cy="350" r="25" fill="url(#art-module)"/>
+        <circle cx="1190" cy="420" r="23" fill="url(#art-module)"/>
+        <circle cx="1190" cy="490" r="20" fill="url(#art-module)"/>
+        <circle cx="1190" cy="560" r="16" fill="url(#art-module)"/>
+        <circle cx="1250" cy="210" r="20" fill="url(#art-module)"/>
+        <circle cx="1250" cy="280" r="24" fill="url(#art-module)"/>
+        <circle cx="1250" cy="350" r="27" fill="url(#art-module)"/>
+        <circle cx="1250" cy="420" r="24" fill="url(#art-module)"/>
+        <circle cx="1250" cy="490" r="20" fill="url(#art-module)"/>
+        <circle cx="1310" cy="280" r="23" fill="url(#art-module)"/>
+        <circle cx="1310" cy="350" r="28" fill="url(#art-module)"/>
+        <circle cx="1310" cy="420" r="23" fill="url(#art-module)"/>
+      </g>
+      </g>
+
+      <!-- a little drifting dust in the water -->
+      <g fill="#7cc4e8" fill-opacity="0.35">
+        <circle cx="960" cy="120" r="1.6"/><circle cx="1010" cy="580" r="1.4"/><circle cx="1250" cy="40" r="1.2"/>
+        <circle cx="1460" cy="610" r="1.6"/><circle cx="1540" cy="120" r="1.3"/><circle cx="1480" cy="300" r="1.2"/>
+      </g>
+    </svg>
+    <div class="wrap home-hero-text">
+      <div class="hero-above">
+        <p class="eyebrow">Simon Fraser University · Department of Physics</p>
+        <h1>Engaging Fundamental Discovery</h1>
+      </div>
+      <div class="hero-below">
+        <p class="lead">We study the fundamental particles and their interactions, 100 metres under Geneva at the Large Hadron Collider and 2,700 metres down at the bottom of the Pacific Ocean.</p>
+      </div>
+    </div>
+    <div class="wrap home-hero-labels" aria-hidden="true">
+      <span>ATLAS · CERN, Geneva<small>Artistic interpretation</small></span>
+      <span>P-ONE · Pacific Ocean<small>Artistic interpretation</small></span>
     </div>
   </section>
 
-  <main>
+  <main class="home">
+
     <div class="wrap">
-      <div class="cards">
-        <article class="card">
-          <img class="card-img" src="images/atlas-detector.jpg" alt="">
-          <h3>ATLAS at the LHC</h3>
-          <p>We analyze proton collisions recorded by the ATLAS detector at CERN, measure the Higgs boson, search for long-lived particles, and build parts of the new ATLAS Inner Tracker.</p>
-          <a class="more" href="research.html#atlas">About our ATLAS work</a>
-        </article>
-        <article class="card">
-          <img class="card-img" src="images/p-one-line.jpg" alt="">
-          <h3>P-ONE</h3>
-          <p>SFU leads the science of the Pacific Ocean Neutrino Experiment, a neutrino telescope being built on the seafloor off Vancouver Island.</p>
-          <a class="more" href="research.html#p-one">About P-ONE</a>
-        </article>
-        <article class="card">
-          <h3>High Performance Computing</h3>
-          <p>Analyzing LHC data takes serious computing. SFU hosts the ATLAS-Canada Tier-1 data centre and national research supercomputing.</p>
-          <a class="more" href="computing.html">About computing</a>
-        </article>
-        <article class="card">
-          <h3>Education</h3>
-          <p>We train students as research scientists, with a path into high energy physics or big-data computing.</p>
-          <a class="more" href="join.html">Join the group</a>
-        </article>
+      <h2 class="section-title">Our research</h2>
+      <div class="feature-grid">
+        <a class="feature feature-atlas" href="research.html#atlas">
+          <img src="images/atlas-detector.jpg" alt="">
+          <div class="feature-text">
+            <span class="tag">At the Large Hadron Collider</span>
+            <h3>ATLAS</h3>
+            <p>We analyze proton collisions recorded by the ATLAS detector at CERN, measure the Higgs boson, search for long-lived particles, and build parts of the new ATLAS Inner Tracker.</p>
+            <span class="more">About our ATLAS work →</span>
+          </div>
+        </a>
+        <a class="feature feature-pone" href="research.html#p-one">
+          <img src="images/p-one-modules.jpg" alt="">
+          <div class="feature-text">
+            <span class="tag">In the deep Pacific</span>
+            <h3>P-ONE</h3>
+            <p>SFU leads the science of the Pacific Ocean Neutrino Experiment, a neutrino telescope being built on the seafloor off Vancouver Island.</p>
+            <span class="more">About P-ONE →</span>
+          </div>
+        </a>
       </div>
 
-      <h2>Latest news</h2>
-      <ul class="entries">
-        <li><a href="https://www.sfu.ca/physics/news-events/news/2026/neutrino-telescope.html">First P-ONE detector line prepared for deep-sea deployment</a>
-          <div class="meta">August 2026</div></li>
-        <li><a href="https://educationnewscanada.com/article/education/level/university/1/1209546/searching-for-the-next-higgs-boson-sfu-team-drives-global-effort-to-boost-science-experiment-at-large-hadron-collider.html">SFU team builds the first petal for the new ATLAS tracker</a>
-          <div class="meta">July 2026</div></li>
-      </ul>
-      <p><a href="news.html">All news</a></p>
+      <div class="cards">
+        <a class="card card-link" href="computing.html">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><circle cx="7" cy="7" r="1"/><circle cx="7" cy="17" r="1"/></svg>
+          <h3>High performance computing</h3>
+          <p>Analyzing LHC data takes serious computing. SFU hosts the ATLAS-Canada Tier-1 data centre and national research supercomputing.</p>
+          <span class="more">About computing →</span>
+        </a>
+        <a class="card card-link" href="people.html#students">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+          <h3>Education</h3>
+          <p>We train students as research scientists, with a path into high energy physics or big-data computing.</p>
+          <span class="more">Meet our students →</span>
+        </a>
+      </div>
 
-      <p class="credits">Photos: ATLAS detector by CERN, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:ATLAS.jpg">Wikimedia Commons</a>. P-ONE line by Simon Fraser University.</p>
+      <h2 class="section-title">Latest news</h2>
+      <!-- Keep the two newest items from news.html here. -->
+      <div class="news-grid">
+        <a class="news-card news-card-pone" href="https://www.sfu.ca/physics/news-events/news/2026/neutrino-telescope.html">
+          <span class="date">August 2026</span>
+          <h3>First P-ONE detector line prepared for deep-sea deployment</h3>
+          <span class="more">Read the story →</span>
+        </a>
+        <a class="news-card" href="https://educationnewscanada.com/article/education/level/university/1/1209546/searching-for-the-next-higgs-boson-sfu-team-drives-global-effort-to-boost-science-experiment-at-large-hadron-collider.html">
+          <span class="date">July 2026</span>
+          <h3>SFU team builds the first petal for the new ATLAS tracker</h3>
+          <span class="more">Read the story →</span>
+        </a>
+      </div>
+      <p><a href="news.html">All news</a></p>
+    </div>
+
+    <section class="cta">
+      <div class="wrap">
+        <div>
+          <h2>Want to do research with us?</h2>
+          <p>We welcome graduate and undergraduate students interested in particle and astroparticle physics.</p>
+        </div>
+        <a class="button button-light" href="join.html">How to join</a>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <p class="credits">Photos: ATLAS detector by CERN, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:ATLAS.jpg">Wikimedia Commons</a>. P-ONE photos by Simon Fraser University.</p>
     </div>
   </main>
 

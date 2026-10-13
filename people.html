@@ -26,46 +26,95 @@
   </header>
   <!-- END HEADER -->
 
-  <main>
-    <div class="wrap">
-      <h1>People</h1>
-      <!-- To add someone, copy one <li> line in the right list and edit it. Keep lists in alphabetical order by last name. -->
-
-      <h2>Faculty</h2>
-      <!-- Photos for every list live in images/people/ (about 600 px). With no photo, use <span class="photo initials" aria-hidden="true">AB</span> instead of the <img>. -->
-      <ul class="people">
-        <li><img class="photo" src="images/people/danninger.jpg" alt="Matthias Danninger"><span class="name"><a href="https://www.sfu.ca/physics/people/faculty/mdanning.html">Matthias Danninger</a></span><span class="role">Associate Professor, Canada Research Chair. ATLAS; P-ONE scientific spokesperson</span></li>
-        <li><img class="photo" src="images/people/grant.jpg" alt="Darren Grant"><span class="name"><a href="https://www.sfu.ca/physics/people/faculty/dgrant.html">Darren Grant</a></span><span class="role">Professor, Canada Excellence Research Chair. Astroparticle physics</span></li>
-        <li><img class="photo" src="images/people/oneil.jpg" alt="Dugan O'Neil"><span class="name"><a href="https://www.sfu.ca/physics/people/faculty/doneil.html">Dugan O'Neil</a></span><span class="role">Experimental particle physics</span></li>
-        <li><span class="photo initials" aria-hidden="true">LP</span><span class="name">Luise Poley</span><span class="role">Adjunct Professor; TRIUMF project scientist. ITk</span></li>
-        <li><img class="photo" src="images/people/stelzer.jpg" alt="Bernd Stelzer"><span class="name"><a href="https://www.sfu.ca/physics/people/faculty/stelzer.html">Bernd Stelzer</a></span><span class="role">Professor. ATLAS Higgs and top quark physics; ITk</span></li>
-        <li><img class="photo" src="images/people/vetterli.jpg" alt="Mike Vetterli"><span class="name"><a href="https://www.sfu.ca/physics/people/professors-emeriti/vetterli.html">Mike Vetterli</a></span><span class="role">Professor Emeritus</span></li>
-      </ul>
-
-      <h2>Postdoctoral researchers</h2>
-      <ul class="people">
-        <li><span class="photo initials" aria-hidden="true">JB</span><span class="name">Jackson Burzynski</span><span class="role">Postdoctoral researcher</span></li>
-        <li><span class="photo initials" aria-hidden="true">FH</span><span class="name">Felix Henningsen</span><span class="role">Postdoctoral researcher</span></li>
-        <li><span class="photo initials" aria-hidden="true">BL</span><span class="name">Bingxuan Liu</span><span class="role">Postdoctoral researcher</span></li>
-        <li><span class="photo initials" aria-hidden="true">CM</span><span class="name">Caleb Miller</span><span class="role">Postdoctoral researcher</span></li>
-      </ul>
-
-      <h2>Students</h2>
-      <!-- TODO: add current students missing from this list, including P-ONE and undergraduate students. -->
-      <ul class="people">
-        <li><img class="photo" src="images/people/grimes.jpg" alt="Annabelle Grimes"><span class="name">Annabelle Grimes</span><span class="role">PhD student</span></li>
-        <li><span class="photo initials" aria-hidden="true">PP</span><span class="name">Paras Pokharel</span><span class="role">MSc candidate</span></li>
-        <li><img class="photo" src="images/people/salami.jpg" alt="Richard Salami"><span class="name">Richard Salami</span><span class="role">PhD student</span></li>
-      </ul>
-
-      <h2>Former members</h2>
-      <!-- TODO: copy the rest of the former members list from the old site. -->
-      <ul class="people">
-        <li><span class="photo initials" aria-hidden="true">DG</span><span class="name">Dilraj Ghuman</span><span class="role">PhD graduate</span></li>
-        <li><span class="photo initials" aria-hidden="true">HH</span><span class="name">Hamza Hanif</span><span class="role">PhD graduate</span></li>
-        <li><span class="photo initials" aria-hidden="true">JS</span><span class="name">Jakub Stacho</span><span class="role">PhD graduate</span></li>
-      </ul>
+  <!-- PAGE HERO: see research.html for how this block works. -->
+  <section class="page-hero page-hero-grid">
+    <div class="wrap page-hero-text">
+      <p class="eyebrow">People</p>
+      <h1>The people behind the research</h1>
+      <p class="lead">Faculty, postdoctoral researchers and students working on ATLAS, P&#8209;ONE and large-scale computing at SFU.</p>
+      <nav class="jump-links" aria-label="On this page">
+        <a href="#faculty">Faculty</a>
+        <a href="#postdocs">Postdocs</a>
+        <a href="#students">Students</a>
+        <a href="#former">Former members</a>
+      </nav>
     </div>
+  </section>
+
+  <main class="research">
+    <!-- To add someone, copy one <li> line in the right list and edit it. Keep lists in alphabetical order by last name.
+         Project tags at the end of each line: <span class="tag">ATLAS</span> (red) and/or <span class="tag tag-ocean">P&#8209;ONE</span> (blue), <span class="tag tag-ice">IceCube</span> (purple). Leave the tags span out if unsure.
+         Photos for every list live in images/people/ (about 600 px). With no photo, use <span class="photo placeholder" aria-hidden="true"></span> instead of the <img>. -->
+
+    <section id="faculty" class="research-section">
+      <div class="wrap">
+        <h2 class="section-title">Faculty</h2>
+        <ul class="people">
+          <li><img class="photo" src="images/people/danninger.jpg" alt="Matthias Danninger"><span class="name"><a href="https://www.sfu.ca/physics/people/faculty/mdanning.html">Matthias Danninger</a></span><span class="role">Associate Professor, Canada Research Chair. ATLAS; P-ONE scientific spokesperson</span><span class="tags"><span class="tag">ATLAS</span><span class="tag tag-ocean">P&#8209;ONE</span></span></li>
+          <li><img class="photo" src="images/people/grant.jpg" alt="Darren Grant"><span class="name"><a href="https://www.sfu.ca/physics/people/faculty/dgrant.html">Darren Grant</a></span><span class="role">Professor, Canada Excellence Research Chair. Astroparticle physics</span><span class="tags"><span class="tag tag-ocean">P&#8209;ONE</span><span class="tag tag-ice">IceCube</span></span></li>
+          <li><img class="photo" src="images/people/oneil.jpg" alt="Dugan O'Neil"><span class="name"><a href="https://www.sfu.ca/physics/people/faculty/doneil.html">Dugan O'Neil</a></span><span class="role">Experimental particle physics</span><span class="tags"><span class="tag">ATLAS</span></span></li>
+          <li><span class="photo placeholder" aria-hidden="true"></span><span class="name">Luise Poley</span><span class="role">Adjunct Professor; TRIUMF project scientist. ITk</span><span class="tags"><span class="tag">ATLAS</span></span></li>
+          <li><img class="photo" src="images/people/stelzer.jpg" alt="Bernd Stelzer"><span class="name"><a href="https://www.sfu.ca/physics/people/faculty/stelzer.html">Bernd Stelzer</a></span><span class="role">Professor. ATLAS Higgs and top quark physics; ITk</span><span class="tags"><span class="tag">ATLAS</span></span></li>
+          <li><img class="photo" src="images/people/vetterli.jpg" alt="Mike Vetterli"><span class="name"><a href="https://www.sfu.ca/physics/people/professors-emeriti/vetterli.html">Mike Vetterli</a></span><span class="role">Professor Emeritus</span><span class="tags"><span class="tag">ATLAS</span></span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="postdocs" class="research-section section-alt">
+      <div class="wrap">
+        <h2 class="section-title">Postdoctoral researchers</h2>
+        <ul class="people">
+          <li><span class="photo placeholder" aria-hidden="true"></span><span class="name">Jackson Burzynski</span><span class="role">Postdoctoral researcher</span><span class="tags"><span class="tag">ATLAS</span></span></li>
+          <li><span class="photo placeholder" aria-hidden="true"></span><span class="name">Felix Henningsen</span><span class="role">Postdoctoral researcher</span><span class="tags"><span class="tag tag-ocean">P&#8209;ONE</span><span class="tag tag-ice">IceCube</span></span></li>
+          <li><span class="photo placeholder" aria-hidden="true"></span><span class="name">Bingxuan Liu</span><span class="role">Postdoctoral researcher</span><span class="tags"><span class="tag">ATLAS</span></span></li>
+          <li><span class="photo placeholder" aria-hidden="true"></span><span class="name">Caleb Miller</span><span class="role">Postdoctoral researcher</span><span class="tags"><span class="tag tag-ocean">P&#8209;ONE</span></span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="students" class="research-section">
+      <div class="wrap">
+        <h2 class="section-title">Students</h2>
+        <!-- TODO: add current students missing from this list, including P-ONE and undergraduate students. -->
+        <ul class="people">
+          <li><img class="photo" src="images/people/grimes.jpg" alt="Annabelle Grimes"><span class="name"><a href="https://www.sfu.ca/physics/people/graduate-students/alg181.html">Annabelle Grimes</a></span><span class="role">PhD student</span><span class="tags"><span class="tag tag-ocean">P&#8209;ONE</span></span></li>
+          <li><span class="photo placeholder" aria-hidden="true"></span><span class="name"><a href="https://www.sfu.ca/physics/people/graduate-students/vja14.html">Vincent Jourdenais</a></span><span class="role">MSc candidate</span><span class="tags"><span class="tag tag-ocean">P&#8209;ONE</span></span></li>
+          <li><span class="photo placeholder" aria-hidden="true"></span><span class="name"><a href="https://www.sfu.ca/physics/people/graduate-students/sjm32.html">Sam Moir</a></span><span class="role">PhD candidate</span><span class="tags"><span class="tag tag-ocean">P&#8209;ONE</span></span></li>
+          <li><span class="photo placeholder" aria-hidden="true"></span><span class="name">Paras Pokharel</span><span class="role">MSc candidate</span></li>
+          <li><img class="photo" src="images/people/salami.jpg" alt="Richard Salami"><span class="name"><a href="https://www.sfu.ca/physics/people/graduate-students/ros3.html">Richard Salami</a></span><span class="role">PhD student</span><span class="tags"><span class="tag">ATLAS</span></span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="former" class="research-section section-alt">
+      <div class="wrap">
+        <h2 class="section-title">Former members</h2>
+        <!-- TODO: copy the rest of the former members list from the old site. -->
+        <!-- Former members: degree and year, project, then supervisor (from INSPIRE thesis records). Sorted by last name; "van Nieuwkoop" is under N. -->
+        <ul class="people people-compact">
+          <li><span class="photo placeholder" aria-hidden="true"></span><span class="name">Sina Bahrasemani</span><span class="role">PhD 2019</span><span class="role">Supervisor: Dugan O'Neil</span><span class="tags"><span class="tag">ATLAS</span></span></li>
+          <li><span class="photo placeholder" aria-hidden="true"></span><span class="name">Etienne Dreyer</span><span class="role">PhD 2021</span><span class="role">Supervisor: Bernd Stelzer</span><span class="tags"><span class="tag">ATLAS</span></span></li>
+          <li><span class="photo placeholder" aria-hidden="true"></span><span class="name">Dilraj Ghuman</span><span class="role">PhD 2026</span><span class="role">Supervisor: Matthias Danninger</span><span class="tags"><span class="tag tag-ocean">P&#8209;ONE</span></span></li>
+          <li><span class="photo placeholder" aria-hidden="true"></span><span class="name">Hamza Hanif</span><span class="role">PhD 2025</span><span class="role">Supervisor: Matthias Danninger</span><span class="tags"><span class="tag">ATLAS</span></span></li>
+          <li><span class="photo placeholder" aria-hidden="true"></span><span class="name">Arthur James Horton</span><span class="role">PhD 2017</span><span class="role">Supervisor: Mike Vetterli</span><span class="tags"><span class="tag">ATLAS</span></span></li>
+          <li><span class="photo placeholder" aria-hidden="true"></span><span class="name">Benjamin Jäger</span><span class="role">PhD 2022</span><span class="role">Supervisor: Bernd Stelzer</span><span class="tags"><span class="tag">ATLAS</span></span></li>
+          <li><span class="photo placeholder" aria-hidden="true"></span><span class="name">Konstantin Lehmann</span><span class="role">PhD 2022</span><span class="role">Supervisor: Bernd Stelzer</span><span class="tags"><span class="tag">ATLAS</span></span></li>
+          <li><span class="photo placeholder" aria-hidden="true"></span><span class="name">Koos van Nieuwkoop</span><span class="role">PhD 2017</span><span class="role">Supervisor: Bernd Stelzer</span><span class="tags"><span class="tag">ATLAS</span></span></li>
+          <li><span class="photo placeholder" aria-hidden="true"></span><span class="name">Damian Sheppard</span><span class="role">MSc 2025</span><span class="role">Supervisor: Bernd Stelzer</span><span class="tags"><span class="tag">ATLAS</span></span></li>
+          <li><span class="photo placeholder" aria-hidden="true"></span><span class="name">Jakub Stacho</span><span class="role">PhD 2026</span><span class="role">Supervisor: Matthias Danninger</span><span class="tags"><span class="tag tag-ocean">P&#8209;ONE</span></span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <div>
+          <h2>Want to join the group?</h2>
+          <p>We welcome graduate and undergraduate students interested in particle and astroparticle physics.</p>
+        </div>
+        <a class="button button-light" href="join.html">How to join</a>
+      </div>
+    </section>
   </main>
 
   <!-- FOOTER: the same block is on every page. -->
