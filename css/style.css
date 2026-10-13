@@ -55,12 +55,26 @@ h2 { font-size: 1.4rem; margin-top: 36px; }
 .card { border: 1px solid var(--line); border-radius: 10px; padding: 20px; background: var(--bg); }
 .card h3 { margin-top: 0; }
 .card .more { font-weight: 600; text-decoration: none; }
+/* Photo across the top of a card, edge to edge. */
+.card .card-img { display: block; width: calc(100% + 40px); max-width: none; margin: -20px -20px 16px; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 10px 10px 0 0; }
+
+/* Photos with captions. Put one or more <figure>s inside <div class="figures">. */
+.figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 24px 0; }
+.figures figure { margin: 0; }
+.figures img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 8px; background: var(--bg-soft); }
+.figures figcaption { color: var(--muted); font-size: 0.9rem; margin-top: 8px; }
+.figures .credit { display: block; font-size: 0.8rem; }
+.figures .credit a { color: var(--muted); }
 
 /* People */
 .people { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px; padding: 0; list-style: none; }
 .people li { border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
 .people .name { font-weight: 600; display: block; }
 .people .role { color: var(--muted); font-size: 0.95rem; }
+/* Photo at the top of a card. Square crop, biased upward so faces stay in frame. */
+.people .photo { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; object-position: 50% 25%; border-radius: 6px; margin-bottom: 12px; background: var(--bg-soft); }
+/* Stand-in when there is no photo yet: a grey square with the person's initials. */
+.people .photo.initials { display: flex; align-items: center; justify-content: center; font-size: 3rem; font-weight: 600; color: var(--muted); }
 
 /* Lists of publications and news */
 .entries { padding-left: 0; list-style: none; }
@@ -71,3 +85,7 @@ h2 { font-size: 1.4rem; margin-top: 36px; }
 .site-footer { border-top: 1px solid var(--line); background: var(--bg-soft); color: var(--muted); font-size: 0.95rem; }
 .site-footer .wrap { padding-top: 20px; padding-bottom: 20px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
 .site-footer a { color: var(--muted); }
+
+/* Small photo credit line at the bottom of a page. */
+.credits { color: var(--muted); font-size: 0.8rem; margin-top: 40px; }
+.credits a { color: var(--muted); }

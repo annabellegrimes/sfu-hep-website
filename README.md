@@ -42,7 +42,7 @@ For anything bigger than a typo, work on a branch and open a pull request so som
 
 **Post news.** In `news.html`, copy one `<li>` block to the top. Also update the "Latest news" list on `index.html` (keep the two newest).
 
-**Add a photo.** Put it in `images/` (resize to about 1600 px wide first) and add `<img src="images/name.jpg" alt="what it shows">` where you want it.
+**Add a photo.** Put it in `images/` (resize to about 1600 px wide first) and add `<img src="images/name.jpg" alt="what it shows">` where you want it. For a photo with a caption, copy a `<figure>` block from `research.html`. Only use photos we are allowed to use (our own, SFU's, or openly licensed ones such as CERN's on Wikimedia Commons), and always keep the credit line: most licences require it. People photos go in `images/people/`.
 
 **Change the menu or footer.** The header and footer are copied into every page between the `HEADER` and `FOOTER` comments. Change all seven pages the same way.
 
