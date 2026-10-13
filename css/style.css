@@ -131,6 +131,7 @@ main.home { padding-top: 0; }
 .facts .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; padding-top: 28px; padding-bottom: 28px; }
 .fact strong { display: block; font-size: 1.9rem; line-height: 1.1; color: var(--red); }
 .fact span { color: var(--muted); font-size: 0.92rem; }
+.fact { text-align: center; }
 
 /* Big photo panels for the experiments */
 .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
@@ -405,7 +406,7 @@ main.research { padding: 0; }
 
 /* P-ONE numbers card: a deep-ocean gradient */
 .depth-card { display: grid; gap: 1px; border-radius: 14px; overflow: hidden; background: rgba(255, 255, 255, 0.15); box-shadow: 0 10px 30px rgba(6, 42, 64, 0.25); margin-top: 48px; }
-.depth-card div { padding: 18px 24px; color: #fff; }
+.depth-card div { padding: 18px 24px; color: #fff; text-align: center; }
 .depth-card div:nth-child(1) { background: var(--ocean); }
 .depth-card div:nth-child(2) { background: var(--ocean-dark); }
 .depth-card div:nth-child(3) { background: var(--ocean-deep); }
@@ -532,3 +533,7 @@ main.research { padding: 0; }
   background-size: 88%, cover;
   background-position: center 75%, center;
 }
+
+/* Icon tiles (any card that starts with an .icon): icon, heading and text centred */
+.topic:has(> .icon), .card-link:has(> .icon) { text-align: center; }
+.topic > .icon, .card-link > .icon { display: block; margin: 0 auto 10px; width: 40px; height: 40px; }

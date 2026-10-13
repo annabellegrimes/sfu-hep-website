@@ -80,7 +80,7 @@ All colours are defined once at the top of `css/style.css`. Use the variables, n
 
 - Photo with caption and credit: `<figure class="photo-figure">` (research.html)
 - Text beside a photo: `<div class="split">` (research.html)
-- Icon tiles: `<div class="topic-grid">` (research.html, join.html)
+- Icon tiles: `<div class="topic-grid">` (research.html, join.html). Tiles that start with an icon are centred automatically.
 - Numbered steps: `<ol class="steps">` (research.html, join.html)
 - Timeline: `<ol class="timeline">` (research.html, computing.html)
 - Big-number panel: `<div class="callout">` (research.html, publications.html)
