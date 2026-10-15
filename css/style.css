@@ -24,6 +24,10 @@
   --ocean-light: #7cc4e8;  /* blue text on dark backgrounds */
   /* IceCube */
   --ice: #5b3fa0;
+  --ice-dark: #46307d;
+  --ice-deep: #221640;     /* dark IceCube backgrounds */
+  --ice-soft: #f5f2fb;     /* light IceCube backgrounds */
+  --ice-light: #c3b2f0;    /* purple text on dark backgrounds */
   /* Neutrals */
   --night: #0d1117;        /* dark banners and sections */
   --ink: #1f2328;
@@ -117,8 +121,7 @@ h2 { font-size: 1.4rem; margin-top: 36px; }
 .home-hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); max-width: 12em; margin-bottom: 16px; letter-spacing: -0.01em; }
 .home-hero .lead { color: rgba(255, 255, 255, 0.88); max-width: 34em; }
 .eyebrow { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.8rem; font-weight: 600; color: var(--red-light); margin: 0 0 12px; }
-.buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-.home-hero-labels { margin-top: auto; display: flex; justify-content: space-between; gap: 12px; padding-bottom: 18px; font-size: 0.8rem; color: rgba(255, 255, 255, 0.75); }
+.buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }.home-hero-labels { margin-top: auto; display: flex; justify-content: space-between; gap: 12px; padding-bottom: 18px; font-size: 0.8rem; color: rgba(255, 255, 255, 0.75); }
 .home-hero-labels span:last-child { text-align: right; }
 .home-hero-labels small { display: block; font-size: 0.7rem; font-style: italic; opacity: 0.7; }
 
@@ -134,7 +137,13 @@ main.home { padding-top: 0; }
 .fact { text-align: center; }
 
 /* Big photo panels for the experiments */
-.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+/* An odd card out (e.g. the third, IceCube) sits centred on its own row, the same width as the others */
+.feature-grid > :last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 10px); }
+@media (max-width: 700px) {
+  .feature-grid { grid-template-columns: 1fr; }
+  .feature-grid > :last-child:nth-child(odd) { width: 100%; }
+}
 .feature { position: relative; display: flex; align-items: flex-end; min-height: 420px; border-radius: 14px; overflow: hidden; color: #fff; text-decoration: none; background: var(--night); }
 .feature img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
 .feature::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10, 14, 20, 0.92) 0%, rgba(10, 14, 20, 0.55) 50%, rgba(10, 14, 20, 0.05) 100%); }
@@ -189,6 +198,13 @@ main.home { padding-top: 0; }
 .jump-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
 .jump-links a { padding: 7px 16px; border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 999px; color: #fff; text-decoration: none; font-weight: 500; font-size: 0.95rem; }
 .jump-links a:hover { background: #fff; color: var(--ink); }
+/* Jump links to one experiment take its colour (news.html, publications.html) */
+.jump-links a.jump-atlas { background: var(--red); border-color: var(--red); }
+.jump-links a.jump-pone { background: var(--ocean); border-color: var(--ocean); }
+.jump-links a.jump-ice { background: var(--ice); border-color: var(--ice); }
+.jump-links a.jump-atlas:hover { background: var(--red-dark); border-color: var(--red-dark); color: #fff; }
+.jump-links a.jump-pone:hover { background: var(--ocean-dark); border-color: var(--ocean-dark); color: #fff; }
+.jump-links a.jump-ice:hover { background: var(--ice-dark); border-color: var(--ice-dark); color: #fff; }
 
 /* ---------- Research page ---------- */
 main.research { padding: 0; }
@@ -355,7 +371,10 @@ main.research { padding: 0; }
 }
 
 /* External news feed (P-ONE collaboration news on news.html) */
-.section-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 28px; }
+/* Text on the left, button always bottom-right, whatever the length of the text; stacked on phones */
+.section-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 20px 40px; margin-bottom: 28px; }
+.section-head .button { white-space: nowrap; }
+@media (max-width: 640px) { .section-head { grid-template-columns: 1fr; } .section-head .button { justify-self: start; } }
 .section-head h2 { margin: 10px 0 8px; }
 .section-head .lead { margin: 0; }
 .button-ocean { background: var(--ocean); border-color: var(--ocean); }
@@ -370,11 +389,14 @@ main.research { padding: 0; }
 .callout + .callout { margin-top: 20px; }
 .callout-ocean { background: var(--ocean-deep); }
 .callout-ocean .callout-stat strong, .callout-ocean a.on-dark { color: var(--ocean-light); }
+.callout-ice { background: var(--ice-deep); }
+.callout-ice .callout-stat strong, .callout-ice a.on-dark { color: var(--ice-light); }
 
 /* ---------- Research page: one colour-coded "chapter" per experiment ---------- */
-/* Each chapter sets --accent; everything inside picks it up. Red = ATLAS, blue = P-ONE. */
+/* Each chapter sets --accent; everything inside picks it up. Red = ATLAS, blue = P-ONE, purple = IceCube. */
 .chapter-atlas { --accent: var(--red); --accent-soft: var(--red-soft); --accent-dark: var(--red-deep); }
 .chapter-pone  { --accent: var(--ocean); --accent-soft: var(--ocean-soft); --accent-dark: var(--ocean-deep); }
+.chapter-ice   { --accent: var(--ice); --accent-soft: var(--ice-soft); --accent-dark: var(--ice-deep); }
 
 
 /* Chapter banner: full-width photo, darkened in the experiment's colour */
@@ -404,6 +426,37 @@ main.research { padding: 0; }
 .chapter-links a { text-decoration: none; }
 .chapter-links a:hover { text-decoration: underline; }
 
+/* Video beside a short description (research.html, P-ONE). The frame keeps a 16:9 shape at any width. */
+.video-feature { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 28px; align-items: center; margin-top: 40px; }
+.video-figure { margin: 0; }
+.video-frame { aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; background: var(--night); box-shadow: 0 10px 30px rgba(6, 42, 64, 0.25); }
+.video-frame iframe, .video-frame video { display: block; width: 100%; height: 100%; border: 0; }
+.video-frame video { object-fit: cover; background: var(--night); }
+.video-figure figcaption { color: var(--muted); font-size: 0.85rem; margin-top: 8px; }
+.video-figure figcaption a { color: var(--muted); }
+.video-feature .subhead { margin-top: 0; }
+.video-feature p { margin: 0 0 12px; }
+@media (max-width: 800px) { .video-feature { grid-template-columns: 1fr; } }
+
+/* "What students work on": a panel tinted in the experiment's colour, with a colour strip along the top,
+   holding one white tile per topic. Each tile has an icon in a soft rounded square. */
+.student-work { position: relative; overflow: hidden; margin-top: 48px; padding: 34px 32px 32px; border-radius: 18px;
+  background: linear-gradient(160deg, #fff 0%, color-mix(in srgb, var(--accent) 7%, #fff) 100%);
+  border: 1px solid color-mix(in srgb, var(--accent) 16%, var(--line));
+  box-shadow: 0 14px 36px color-mix(in srgb, var(--accent-dark) 12%, transparent); }
+.student-work::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 5px; background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 35%, white)); }
+.student-eyebrow { margin: 0 0 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); }
+.student-work .subhead { margin: 0 0 6px; font-size: 1.5rem; }
+.student-work > p:not(.student-eyebrow) { margin: 0 0 22px; color: var(--muted); max-width: 46em; }
+.student-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.student-list li { display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 14px; align-items: start; padding: 16px 18px; background: #fff; border: 1px solid color-mix(in srgb, var(--accent) 12%, var(--line)); border-radius: 14px; font-size: 0.93rem; line-height: 1.5; color: var(--muted); transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s; }
+.student-list li:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 35%, var(--line)); box-shadow: 0 8px 20px color-mix(in srgb, var(--accent-dark) 10%, transparent); }
+.student-list .icon { width: 46px; height: 46px; padding: 11px; margin: 0; border-radius: 12px; background: color-mix(in srgb, var(--accent) 11%, white); stroke-width: 1.7; }
+.student-list strong { display: block; color: var(--ink); font-size: 1.02rem; margin: 2px 0 3px; }
+.chapter-body .lead + p { margin-top: 0; }
+@media (max-width: 640px) { .student-work { padding: 28px 18px 20px; } .student-list { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .student-list li { transition: none; } .student-list li:hover { transform: none; } }
+
 /* P-ONE numbers card: a deep-ocean gradient */
 .depth-card { display: grid; gap: 1px; border-radius: 14px; overflow: hidden; background: rgba(255, 255, 255, 0.15); box-shadow: 0 10px 30px rgba(6, 42, 64, 0.25); margin-top: 48px; }
 .depth-card div { padding: 18px 24px; color: #fff; text-align: center; }
@@ -412,6 +465,19 @@ main.research { padding: 0; }
 .depth-card div:nth-child(3) { background: var(--ocean-deep); }
 .depth-card strong { display: block; font-size: 1.9rem; line-height: 1.1; }
 .depth-card span { font-size: 0.9rem; color: rgba(255, 255, 255, 0.8); }
+/* ATLAS: the same numbers card, in red */
+.depth-card-atlas { box-shadow: 0 10px 30px rgba(58, 13, 21, 0.25); }
+.depth-card-atlas div:nth-child(1) { background: var(--red); }
+.depth-card-atlas div:nth-child(2) { background: var(--red-dark); }
+.depth-card-atlas div:nth-child(3) { background: var(--red-deep); }
+/* IceCube: the same numbers card and timeline, in purple */
+.depth-card-ice { box-shadow: 0 10px 30px rgba(34, 22, 64, 0.25); }
+.depth-card-ice div:nth-child(1) { background: var(--ice); }
+.depth-card-ice div:nth-child(2) { background: var(--ice-dark); }
+.depth-card-ice div:nth-child(3) { background: var(--ice-deep); }
+.timeline-ice li.done::before { background: var(--ice); border-color: var(--ice); }
+.timeline-ice li.now::before { border-color: var(--ice); box-shadow: 0 0 0 4px rgba(91, 63, 160, 0.2); }
+.timeline-ice .when { color: var(--ice); }
 
 @media (max-width: 640px) {
   .chapter-banner { min-height: 360px; }
@@ -434,6 +500,10 @@ main.research { padding: 0; }
 .feed-atlas .feed { --feed: var(--red); }
 .feed-pone { background: var(--ocean-soft); border-top: 6px solid var(--ocean); }
 .feed-pone .feed { --feed: var(--ocean); }
+.feed-ice { background: var(--ice-soft); border-top: 6px solid var(--ice); }
+.feed-ice .feed { --feed: var(--ice); }
+.button-ice { background: var(--ice); border-color: var(--ice); }
+.button-ice:hover { background: var(--ice-dark); border-color: var(--ice-dark); }
 
 /* Third project tag: IceCube (purple) */
 .tag-ice { background: var(--ice); }
@@ -471,6 +541,9 @@ main.research { padding: 0; }
 .feature-pone::after { background: linear-gradient(to top, color-mix(in srgb, var(--ocean-deep) 92%, transparent) 0%, rgba(10, 14, 20, 0.5) 50%, rgba(10, 14, 20, 0.05) 100%); }
 .feature-atlas { border-bottom: 5px solid var(--red); }
 .feature-pone { border-bottom: 5px solid var(--ocean); }
+.feature-ice .tag { background: var(--ice); }
+.feature-ice::after { background: linear-gradient(to top, color-mix(in srgb, var(--ice-deep) 92%, transparent) 0%, rgba(10, 14, 20, 0.5) 50%, rgba(10, 14, 20, 0.05) 100%); }
+.feature-ice { border-bottom: 5px solid var(--ice); }
 .hero-credit { position: absolute; z-index: 1; }
 @media (max-width: 640px) { .hero-credit { position: relative; right: auto; bottom: auto; max-width: none; text-align: left; padding: 0 16px 10px; } }
 
@@ -489,6 +562,18 @@ main.research { padding: 0; }
 .home-hero-art::after { background: radial-gradient(ellipse 42% 30% at 50% 64%, rgba(10, 14, 20, 0.8) 0%, rgba(10, 14, 20, 0.4) 60%, rgba(10, 14, 20, 0) 100%); }
 .home-hero-art .home-hero-text { text-align: center; }
 .home-hero-art h1, .home-hero-art .lead { margin-left: auto; margin-right: auto; }
+/* The three places, one per line, each with a dot in its experiment's colour */
+.hero-places { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 4px; font-size: 1.15rem; color: #fff; font-weight: 600; }
+.hero-places li::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 10px; vertical-align: 0.12em; }
+.place-atlas::before { background: var(--red-light); }
+.place-pone::before { background: var(--ocean-light); }
+.place-ice::before { background: var(--ice-light); }
+.hero-places a { color: #fff; text-decoration: none; }
+.hero-places a:hover { text-decoration: underline; }
+.hero-places:has(strong) { font-weight: 400; }
+/* Home banner: the list sits in the centre, but its lines are left-aligned so the dots form a column */
+.home-hero-art .hero-places { grid-template-columns: minmax(0, max-content); justify-content: center; text-align: left; }
+.hero-places strong { font-weight: 700; }
 /* Even dimming keeps both halves of the drawing visible; a soft shadow keeps the text readable over it */
 .home-hero-art .home-hero-text { text-shadow: 0 2px 18px rgba(10, 14, 20, 0.9), 0 0 4px rgba(10, 14, 20, 0.6); }
 .hero-art-lit circle { animation: hero-glow 3.2s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: center; }
@@ -509,9 +594,14 @@ main.research { padding: 0; }
 .diagram svg { display: block; width: 100%; height: auto; border-radius: 14px; box-shadow: 0 10px 30px rgba(6, 42, 64, 0.25); }
 .diagram figcaption { color: var(--muted); font-size: 0.85rem; font-style: italic; margin-top: 8px; }
 /* Diagram beside a single column of steps; stacks on narrow screens */
-.how-it-works { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 24px; align-items: center; }
+.how-it-works { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 24px; align-items: start; }
 .how-it-works .diagram { margin: 0; }
-.how-it-works .steps { grid-template-columns: 1fr; }
+/* Compact steps beside the diagram, so the two columns come out about the same height */
+.how-it-works .steps { grid-template-columns: 1fr; gap: 10px; }
+.how-it-works .steps li { padding: 14px 16px 14px 56px; }
+.how-it-works .steps li::before { left: 14px; top: 14px; width: 30px; height: 30px; font-size: 0.9rem; }
+.how-it-works .steps h4 { margin: 3px 0 4px; }
+.how-it-works .steps p { font-size: 0.9rem; line-height: 1.5; }
 @media (max-width: 800px) { .how-it-works { grid-template-columns: 1fr; } }
 
 /* Stand-in when there is no photo yet: a blank, neutral profile outline (head, shoulders, lab-coat collar) on the soft card background.

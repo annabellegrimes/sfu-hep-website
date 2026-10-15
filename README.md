@@ -8,13 +8,13 @@ It replaces the old site at http://sfu-hep.sfu.computecanada.ca/.
 
 | File | Page |
 | --- | --- |
-| `index.html` | Home: intro, four feature cards, latest news |
-| `research.html` | ATLAS (including the ITk upgrade) and P-ONE |
+| `index.html` | Home: intro, three experiment cards and two other cards, latest news |
+| `research.html` | ATLAS (including the ITk upgrade), P-ONE and IceCube |
 | `computing.html` | The ATLAS Tier-1 data centre, the LHC Computing Grid and the Fir supercomputer |
 | `people.html` | Faculty, postdocs, students, former members |
 | `publications.html` | Theses by year (links to SFU Summit), plus links to ATLAS and P-ONE papers |
 | `join.html` | How students can join the group |
-| `news.html` | Group news, plus ATLAS and P-ONE collaboration news |
+| `news.html` | Group news, plus ATLAS, P-ONE and IceCube collaboration news |
 | `css/style.css` | The one stylesheet every page uses |
 | `images/` | Photos and figures |
 
@@ -40,7 +40,7 @@ For anything bigger than a typo, work on a branch and open a pull request so som
 
 **Add a thesis.** In `publications.html`, copy one `<li class="thesis ...">` block into the right year and change the link, title, author, degree and project. Check the degree (PhD or MSc) on Summit; INSPIRE often gets it wrong.
 
-**Post news.** In `news.html`, copy one `<article class="news-item">` block to the top of "Group news". Also update the "Latest news" cards on `index.html` (keep the two newest). Every few months, check the ATLAS and P-ONE news sites and copy new items into their sections; the comments in `news.html` explain how.
+**Post news.** In `news.html`, copy one `<article class="news-item">` block to the top of "Group news". Also update the "Latest news" cards on `index.html` (keep the two newest). Every few months, check the ATLAS, P-ONE and IceCube news sites and copy new items into their sections; the comments in `news.html` explain how.
 
 **Add a photo.** Put it in `images/` (resize to about 1600 px wide first) and add `<img src="images/name.jpg" alt="what it shows">` where you want it. For a photo with a caption, copy a `<figure>` block from `research.html`. Only use photos we are allowed to use (our own, SFU's, or openly licensed ones such as CERN's on Wikimedia Commons), and always keep the credit line: most licences require it. People photos go in `images/people/`.
 
@@ -57,8 +57,8 @@ Every page is built from the same few pieces, all styled in `css/style.css`. Whe
 | Colour | Means | Used for |
 | --- | --- | --- |
 | Red (`--red`) | SFU, and ATLAS | Buttons, links, the "join" band, ATLAS tags and sections |
+| Purple (`--ice`) | IceCube | IceCube tags, and the IceCube section on the Research page |
 | Blue (`--ocean`) | P-ONE, and nothing else | P-ONE tags, sections, timelines |
-| Purple (`--ice`) | IceCube | IceCube tags on the People page |
 | Dark (`.tag-neutral`) | Not about one experiment | Labels like "MSc and PhD" or "Cedar Supercomputing Centre" |
 | Grey (`--grey`) | Another experiment | e.g. the DØ thesis |
 
@@ -74,7 +74,9 @@ All colours are defined once at the top of `css/style.css`. Use the variables, n
 
 **One link per destination.** Apart from the menu, link to each page at most once per page. The red "join" band is the page's link to Join us, so don't add other "Join" buttons.
 
-**Project tags.** `<span class="tag">ATLAS</span>`, `<span class="tag tag-ocean">P‑ONE</span>`, `<span class="tag tag-ice">IceCube</span>`, `<span class="tag tag-neutral">Anything else</span>`. Theses use the same colours as dots (`thesis-atlas`, `thesis-pone`, `thesis-other`).
+**Experiment order.** Wherever the experiments are listed together (cards, sections, tags, links), use the order ATLAS, IceCube, P-ONE.
+
+**Project tags.** `<span class="tag">ATLAS</span>`, `<span class="tag tag-ice">IceCube</span>`, `<span class="tag tag-ocean">P‑ONE</span>`, `<span class="tag tag-neutral">Anything else</span>`. Theses use the same colours as dots (`thesis-atlas`, `thesis-pone`, `thesis-other`).
 
 **Reusable pieces**, with a page to copy from:
 
