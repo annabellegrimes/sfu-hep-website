@@ -371,7 +371,10 @@ main.research { padding: 0; }
 }
 
 /* External news feed (P-ONE collaboration news on news.html) */
-.section-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 28px; }
+/* Text on the left, button always bottom-right, whatever the length of the text; stacked on phones */
+.section-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 20px 40px; margin-bottom: 28px; }
+.section-head .button { white-space: nowrap; }
+@media (max-width: 640px) { .section-head { grid-template-columns: 1fr; } .section-head .button { justify-self: start; } }
 .section-head h2 { margin: 10px 0 8px; }
 .section-head .lead { margin: 0; }
 .button-ocean { background: var(--ocean); border-color: var(--ocean); }
