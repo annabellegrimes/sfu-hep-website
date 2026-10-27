@@ -30,21 +30,27 @@
   --ice-light: #c3b2f0;    /* purple text on dark backgrounds */
   /* Neutrals */
   --night: #0d1117;        /* dark banners and sections */
+  /* Red glow on the right of the project switcher, flat top to bottom so the banner above can fade into it */
+  --switch-glow: radial-gradient(40% 2000% at 85% 50%, rgba(166, 25, 46, 0.35), transparent 70%);
   --ink: #1f2328;
   --muted: #59636e;
   --grey: #9aa3ad;         /* "other experiment" */
   --line: #d8dde3;
   --bg: #ffffff;
   --bg-soft: #f5f6f8;
-  --max: 1080px;
+  /* Content width: 1080px on laptops, growing with the window on large screens up to 1680px */
+  --max: clamp(1080px, 78vw, 1680px);
 }
 
 * { box-sizing: border-box; }
 
+/* Text grows a little with the content width on large screens (16px up to 19px), so lines don't get too long */
+html { font-size: clamp(16px, 0.25vw + 12.4px, 19px); }
+
 body {
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 17px;
+  font-size: 1.0625rem;
   line-height: 1.6;
   color: var(--ink);
   background: var(--bg);
@@ -143,6 +149,14 @@ main.home { padding-top: 0; }
 @media (max-width: 700px) {
   .feature-grid { grid-template-columns: 1fr; }
   .feature-grid > :last-child:nth-child(odd) { width: 100%; }
+}
+/* Three across (index.html, join.html). On join.html each card sits under its column of the facts strip: same 24px gap as .facts */
+.feature-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.feature-grid-3 > :last-child:nth-child(odd) { grid-column: auto; justify-self: stretch; width: auto; }
+.feature-grid-3 .feature-text { padding: 20px; }
+.feature-grid-3 .feature h3 { font-size: 1.6rem; }
+@media (max-width: 900px) {
+  .feature-grid-3 { grid-template-columns: 1fr; }
 }
 .feature { position: relative; display: flex; align-items: flex-end; min-height: 420px; border-radius: 14px; overflow: hidden; color: #fff; text-decoration: none; background: var(--night); }
 .feature img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
@@ -266,6 +280,10 @@ main.research { padding: 0; }
 /* Hero without a photo: a faint grid pattern instead. */
 .page-hero-grid { background-color: var(--night); background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px); background-size: 32px 32px; }
 .page-hero-grid::after { background: radial-gradient(ellipse at 85% 30%, rgba(166, 25, 46, 0.45), transparent 60%); }
+/* With a project switcher below (research.html, news.html), banner and bar read as one panel: the grid is laid from the
+   banner's bottom edge so its lines run on into the bar, and the banner uses the bar's glow (one band, top to bottom). */
+body:has(.project-switch) .page-hero-grid { background-position: left bottom; }
+body:has(.project-switch) .page-hero-grid::after { background: var(--switch-glow); }
 
 .provides { padding: 24px 28px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg); }
 .provides h3 { margin-top: 0; }
@@ -318,11 +336,34 @@ main.research { padding: 0; }
 .people .name { font-size: 1.08rem; }
 .people .name a { color: var(--ink); text-decoration: none; }
 .people .name a:hover { color: var(--red); }
+.people .role a { color: inherit; text-decoration: none; }
+.people .role a:hover { color: var(--red); text-decoration: underline; }
 /* Smaller cards with a round badge, for former members */
 .people-compact { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
 .people-compact li { display: grid; grid-template-columns: 56px 1fr; column-gap: 14px; align-items: center; align-content: center; padding: 14px 16px; }
 .people-compact .photo { grid-row: span 3; width: 56px; margin: 0; border-radius: 50%; }
 .people-compact .name, .people-compact .role { padding: 0; }
+
+/* Photo-card lists pick their column count from how many cards they have, so rows come out balanced:
+   1-3 cards fill one row; 4 and 8 make rows of 4; 5, 6 and 9 make rows of 3 (5 = 3 + 2); anything else gets 4 per row.
+   Every card is the width of one in a row of 4, so photos are the same size in every list; shorter rows sit centred.
+   Phones keep 2 per row (see the 640px block further down). */
+@media (min-width: 641px) {
+  .people:not(.people-compact) { --card: calc((100% - 60px) / 4); grid-template-columns: repeat(4, var(--card)); justify-content: center; }
+  .people:not(.people-compact):has(> li:last-child:nth-child(1)) { grid-template-columns: var(--card); }
+  .people:not(.people-compact):has(> li:last-child:nth-child(2)) { grid-template-columns: repeat(2, var(--card)); }
+  .people:not(.people-compact):has(> li:last-child:nth-child(3)),
+  .people:not(.people-compact):has(> li:last-child:nth-child(5)),
+  .people:not(.people-compact):has(> li:last-child:nth-child(6)),
+  .people:not(.people-compact):has(> li:last-child:nth-child(9)) { grid-template-columns: repeat(3, var(--card)); }
+  /* The heading of a centred list lines up with its first card: indent = (full width - n cards - gaps) / 2 */
+  .wrap:has(> .people:not(.people-compact) > li:last-child:nth-child(3)) > .section-title,
+  .wrap:has(> .people:not(.people-compact) > li:last-child:nth-child(5)) > .section-title,
+  .wrap:has(> .people:not(.people-compact) > li:last-child:nth-child(6)) > .section-title,
+  .wrap:has(> .people:not(.people-compact) > li:last-child:nth-child(9)) > .section-title { margin-left: calc(12.5% + 2.5px); }
+  .wrap:has(> .people:not(.people-compact) > li:last-child:nth-child(2)) > .section-title { margin-left: calc(25% + 5px); }
+  .wrap:has(> .people:not(.people-compact) > li:last-child:nth-child(1)) > .section-title { margin-left: calc(37.5% + 7.5px); }
+}
 
 /* ---------- Publications page ---------- */
 .thesis-year { display: grid; grid-template-columns: 120px 1fr; gap: 24px; padding: 24px 0; border-top: 1px solid var(--line); }
@@ -354,6 +395,21 @@ main.research { padding: 0; }
 .path { padding: 28px; border-radius: 14px; background: var(--bg); border: 1px solid var(--line); scroll-margin-top: 12px; }
 .path h2 { margin: 10px 0 20px; font-size: 1.6rem; }
 .path .steps { grid-template-columns: 1fr; }
+
+/* Join page: facts strip with one colour per experiment, and "who to contact" cards with the experiment's colour on top. */
+.fact-atlas strong { color: var(--red); }
+.fact-ice strong { color: var(--ice); }
+.fact-pone strong { color: var(--ocean); }
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
+.contact { --c: var(--red); padding: 22px 24px; border-radius: 14px; background: var(--bg); border: 1px solid var(--line); border-top: 5px solid var(--c); }
+.contact-ice { --c: var(--ice); }
+.contact-pone { --c: var(--ocean); }
+.contact h3 { margin: 0 0 10px; color: var(--c); font-size: 1.3rem; }
+.contact ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.contact a { color: var(--ink); font-weight: 600; text-decoration: none; }
+.contact a::after { content: " →"; color: var(--c); }
+.contact a:hover { color: var(--c); }
+.contact-more { margin: 24px 0 0; color: var(--muted); }
 .steps-red li::before { background: var(--red); }
 
 @media (max-width: 640px) {
@@ -398,12 +454,41 @@ main.research { padding: 0; }
 .chapter-pone  { --accent: var(--ocean); --accent-soft: var(--ocean-soft); --accent-dark: var(--ocean-deep); }
 .chapter-ice   { --accent: var(--ice); --accent-soft: var(--ice-soft); --accent-dark: var(--ice-deep); }
 
+/* Project switcher (research.html, news.html): a dark bar that sticks to the top of the screen while you are inside the
+   element that contains it. js/project-switch.js marks the current link (aria-current) and sets --progress (0 to 1) for the
+   line along the bottom. Each link takes its experiment's colour: --c fills the current link, --c-light is its text otherwise. */
+/* Background matches the dark page banners (.page-hero-grid): night blue, faint grid, red glow on the right. */
+.project-switch { --accent: #fff; position: sticky; top: 0; z-index: 10; background-color: var(--night); background-image: var(--switch-glow), linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px); background-size: auto, 32px 32px, 32px 32px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18); }
+.project-switch .wrap { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; padding-top: 18px; padding-bottom: 21px; } /* bottom = top + the 3px progress line */
+.project-switch a { --c: #fff; --c-light: rgba(255, 255, 255, 0.85); display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 999px; color: var(--c-light); font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: background 0.15s, color 0.15s, border-color 0.15s; }
+.project-switch a::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+.project-switch a.switch-atlas { --c: var(--red); --c-light: var(--red-light); }
+.project-switch a.switch-ice { --c: var(--ice); --c-light: var(--ice-light); }
+.project-switch a.switch-pone { --c: var(--ocean); --c-light: var(--ocean-light); }
+.project-switch a:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.4); color: var(--c-light); }
+.project-switch a[aria-current] { background: var(--c); border-color: var(--c); color: #fff; }
+.project-switch a.switch-group[aria-current] { color: var(--ink); }
+.project-switch:has(a.switch-atlas[aria-current]) { --accent: var(--red-light); }
+.project-switch:has(a.switch-ice[aria-current]) { --accent: var(--ice-light); }
+.project-switch:has(a.switch-pone[aria-current]) { --accent: var(--ocean-light); }
+.project-switch::after { content: ""; position: absolute; left: 0; bottom: 0; height: 3px; width: calc(var(--progress, 0) * 100%); background: var(--accent); }
+/* Links that jump below the bar land just under it (chapter banners are fine to tuck behind it). */
+.project-switch ~ .research-section, .project-switch ~ * .callout { scroll-margin-top: 64px; }
+@media (prefers-reduced-motion: no-preference) { html:has(.project-switch) { scroll-behavior: smooth; } }
+@media (max-width: 460px) {
+  .project-switch .wrap { gap: 5px; padding-left: 10px; padding-right: 10px; }
+  .project-switch a { padding: 5px 10px; font-size: 0.85rem; }
+  .project-switch a::before { display: none; }
+}
+
 
 /* Chapter banner: full-width photo, darkened in the experiment's colour */
 .chapter { scroll-margin-top: 0; }
 .chapter-banner { position: relative; min-height: 440px; display: flex; align-items: flex-end; color: #fff; background: var(--accent-dark); overflow: hidden; }
 .chapter-banner > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .chapter-banner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, var(--accent-dark) 0%, color-mix(in srgb, var(--accent-dark) 70%, transparent) 45%, color-mix(in srgb, var(--accent-dark) 15%, transparent) 100%); }
+/* The first chapter's photo fades in from the project switcher's night blue above it, so there is no hard edge between them */
+.project-switch + .chapter .chapter-banner::before { content: ""; position: absolute; z-index: 1; inset: 0 0 auto 0; height: 160px; background: linear-gradient(to bottom, var(--night) 0%, color-mix(in srgb, var(--night) 60%, transparent) 40%, transparent 100%); }
 .chapter-banner-text { position: relative; z-index: 1; width: 100%; padding-top: 80px; padding-bottom: 56px; }
 .chapter-kicker { margin: 0; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: color-mix(in srgb, var(--accent) 35%, white); }
 .chapter-banner h2 { font-size: clamp(3rem, 8vw, 5.5rem); line-height: 1; margin: 6px 0 12px; letter-spacing: -0.02em; }
@@ -422,6 +507,24 @@ main.research { padding: 0; }
 .chapter .callout-stat strong { color: color-mix(in srgb, var(--accent) 45%, white); }
 .chapter .subhead { color: var(--accent-dark); }
 .split-top { align-items: start; margin-top: 8px; }
+/* The numbers card sits vertically centred against the timeline beside it */
+.split-top > .depth-card { align-self: center; margin-top: 0; }
+/* Source references: small superscript numbers that link straight to the source, and a short list at the end of each chapter */
+sup.ref { font-size: 0.68em; line-height: 0; margin-left: 1px; }
+sup.ref a { color: var(--accent, var(--red)); text-decoration: none; font-weight: 600; padding: 0 1px; }
+sup.ref a:hover { text-decoration: underline; }
+.depth-card sup.ref a, .callout sup.ref a { color: inherit; opacity: 0.8; }
+.sources { margin-top: 40px; font-size: 0.85rem; color: var(--muted); }
+.sources h4 { margin: 0 0 6px; font-size: 0.9rem; color: var(--ink); }
+.sources ol { margin: 0; padding-left: 1.6em; display: grid; gap: 2px; }
+.sources a { color: var(--muted); }
+.sources a:hover { color: var(--accent, var(--red)); }
+/* The SFU and TRIUMF section (research.html) sits outside the chapters, so it takes the site red as its accent */
+#triumf { --accent: var(--red); }
+#triumf .contact p { margin: 0 0 12px; }
+#triumf .contact p:last-child { margin-bottom: 0; font-weight: 600; }
+#triumf .contact p:last-child a { color: var(--c); }
+.contact sup.ref a::after { content: none; }
 .chapter-links { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 40px 0 0; padding-top: 20px; border-top: 1px solid color-mix(in srgb, var(--accent) 20%, var(--line)); font-weight: 600; }
 .chapter-links a { text-decoration: none; }
 .chapter-links a:hover { text-decoration: underline; }
@@ -449,7 +552,7 @@ main.research { padding: 0; }
 .student-work .subhead { margin: 0 0 6px; font-size: 1.5rem; }
 .student-work > p:not(.student-eyebrow) { margin: 0 0 22px; color: var(--muted); max-width: 46em; }
 .student-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-.student-list li { display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 14px; align-items: start; padding: 16px 18px; background: #fff; border: 1px solid color-mix(in srgb, var(--accent) 12%, var(--line)); border-radius: 14px; font-size: 0.93rem; line-height: 1.5; color: var(--muted); transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s; }
+.student-list li { display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 14px; align-items: center; padding: 16px 18px; background: #fff; border: 1px solid color-mix(in srgb, var(--accent) 12%, var(--line)); border-radius: 14px; font-size: 0.93rem; line-height: 1.5; color: var(--muted); transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s; }
 .student-list li:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 35%, var(--line)); box-shadow: 0 8px 20px color-mix(in srgb, var(--accent-dark) 10%, transparent); }
 .student-list .icon { width: 46px; height: 46px; padding: 11px; margin: 0; border-radius: 12px; background: color-mix(in srgb, var(--accent) 11%, white); stroke-width: 1.7; }
 .student-list strong { display: block; color: var(--ink); font-size: 1.02rem; margin: 2px 0 3px; }
@@ -580,12 +683,25 @@ main.research { padding: 0; }
 .hero-art-lit circle:nth-child(2n) { animation-delay: -1.4s; }
 .hero-art-lit circle:nth-child(3n) { animation-delay: -2.3s; }
 @keyframes hero-glow { from { opacity: 0.55; } to { opacity: 1; } }
-/* On phones, show the middle of the drawing, where the two halves meet */
+/* On phones, the text is no longer laid over the drawing. The eyebrow, title and lead come first,
+   then the whole drawing as a strip with its two labels under it, then the list of experiments.
+   display: contents lets the text's wrappers step aside so each line can be ordered on its own. */
 @media (max-width: 640px) {
-  .home-hero-art::after { background: rgba(10, 14, 20, 0.55); }
-  .home-hero-art .hero-above { padding-bottom: 16px; }
-  .home-hero-art .hero-below { padding-top: 18px; }
-  .hero-art { left: 50%; width: auto; height: 100%; aspect-ratio: 16 / 7; transform: translateX(-50%); }
+  .home-hero-art { min-height: 0; }
+  .home-hero-art::after { display: none; }
+  .home-hero-art .home-hero-text, .home-hero-art .hero-above, .home-hero-art .hero-below { display: contents; }
+  .home-hero-art .hero-above > *, .home-hero-art .hero-below > * { padding-left: 20px; padding-right: 20px; }
+  .home-hero-art .eyebrow { order: 1; padding-top: 28px; }
+  .home-hero-art .hero-above h1 { order: 2; margin-bottom: 14px; }
+  .home-hero-art .lead { order: 3; margin-bottom: 24px; }
+  .hero-art { order: 4; position: relative; height: auto; aspect-ratio: 16 / 7; }
+  .home-hero-art .home-hero-labels { order: 5; margin-top: 0; padding-top: 8px; padding-bottom: 0; font-size: 0.75rem; }
+  .home-hero-art .hero-places { order: 6; margin-top: 20px; padding-bottom: 44px; }
+  .home-hero-art .eyebrow { letter-spacing: 0.06em; font-size: 0.72rem; }
+  .hero-places { font-size: 1rem; gap: 8px; }
+  /* Wrapped lines start under the text, not under the dot */
+  .hero-places li { padding-left: 19px; }
+  .hero-places li::before { margin-left: -19px; }
 }
 @media (prefers-reduced-motion: reduce) { .hero-art-lit circle { animation: none; } }
 
