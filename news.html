@@ -32,16 +32,23 @@
       <p class="eyebrow">News</p>
       <h1>What's new in the group</h1>
       <p class="lead">Detector milestones, discoveries and stories from SFU High Energy Physics and the experiments we work on.</p>
-      <nav class="jump-links" aria-label="On this page">
-        <a href="#group-news">Group news</a>
-        <a class="jump-atlas" href="#atlas-news">ATLAS</a>
-        <a class="jump-ice" href="#icecube-news">IceCube</a>
-        <a class="jump-pone" href="#p-one-news">P&#8209;ONE</a>
-      </nav>
     </div>
   </section>
 
   <main class="research">
+    <!-- The news sections are wrapped in .news-sections so the project switcher sticks to the top only while you are inside them. -->
+    <div class="news-sections">
+
+    <!-- PROJECT SWITCHER: the same bar as on research.html (see the comment there). Each href matches a section's id below. -->
+    <nav class="project-switch" aria-label="News sections">
+      <div class="wrap">
+        <a class="switch-group" href="#group-news">Group news</a>
+        <a class="switch-atlas" href="#atlas-news">ATLAS</a>
+        <a class="switch-ice" href="#icecube-news">IceCube</a>
+        <a class="switch-pone" href="#p-one-news">P&#8209;ONE</a>
+      </div>
+    </nav>
+
     <section id="group-news" class="research-section">
       <div class="wrap">
         <h2 class="section-title">Group news</h2>
@@ -148,6 +155,10 @@
         </ol>
       </div>
     </section>
+
+    </div>
+    <!-- end .news-sections -->
+
     <section class="cta">
       <div class="wrap">
         <div>
@@ -163,9 +174,11 @@
   <footer class="site-footer">
     <div class="wrap">
       <span>High Energy Physics Group, Department of Physics, Simon Fraser University, Burnaby, BC</span>
-      <span><a href="https://www.sfu.ca/physics.html">SFU Physics</a> · <a href="https://github.com/annabellegrimes/sfu-hep-website">Edit this site on GitHub</a></span>
+      <span><a href="https://www.sfu.ca/physics.html">SFU Physics</a></span>
     </div>
   </footer>
   <!-- END FOOTER -->
+
+  <script src="js/project-switch.js"></script>
 </body>
 </html>

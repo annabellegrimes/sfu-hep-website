@@ -52,10 +52,15 @@
           <stop offset="0" stop-color="#7cc4e8" stop-opacity="0.3"/>
           <stop offset="1" stop-color="#0b5f8a" stop-opacity="0"/>
         </radialGradient>
+        <!-- fades all the way out at the cone's wide end, so there is no edge where the cone stops -->
         <linearGradient id="art-cone" x1="1" y1="0" x2="0" y2="0">
-          <stop offset="0" stop-color="#7cc4e8" stop-opacity="0.55"/>
-          <stop offset="1" stop-color="#7cc4e8" stop-opacity="0.03"/>
+          <stop offset="0" stop-color="#7cc4e8" stop-opacity="0.5"/>
+          <stop offset="0.45" stop-color="#7cc4e8" stop-opacity="0.18"/>
+          <stop offset="1" stop-color="#7cc4e8" stop-opacity="0"/>
         </linearGradient>
+        <filter id="art-soft" x="-10%" y="-10%" width="120%" height="120%">
+          <feGaussianBlur stdDeviation="18"/>
+        </filter>
         <radialGradient id="art-module" cx="0.5" cy="0.5" r="0.5">
           <stop offset="0" stop-color="#e6f6ff"/>
           <stop offset="0.45" stop-color="#7cc4e8"/>
@@ -108,7 +113,7 @@
 
       <!-- ===== P-ONE (right): the charged particle and its Cherenkov cone (group shifted right to frame the centred text) ===== -->
       <g transform="translate(120 0)">
-      <polygon points="1400,350 1040,-64 1040,764" fill="url(#art-cone)"/>
+      <polygon points="1400,350 1040,-64 1040,764" fill="url(#art-cone)" filter="url(#art-soft)"/>
       <g stroke="#7cc4e8" stroke-opacity="0.45" stroke-width="1.2">
         <line x1="1400" y1="350" x2="1040" y2="-64"/>
         <line x1="1400" y1="350" x2="1040" y2="764"/>
@@ -168,8 +173,8 @@
       </div>
     </div>
     <div class="wrap home-hero-labels" aria-hidden="true">
-      <span>ATLAS · CERN, Geneva<small>Artistic interpretation</small></span>
-      <span>P-ONE · Pacific Ocean<small>Artistic interpretation</small></span>
+      <span>ATLAS · CERN, Geneva<small>AI-rtistic interpretation</small></span>
+      <span>P-ONE · Pacific Ocean<small>AI-rtistic interpretation</small></span>
     </div>
   </section>
 
@@ -177,7 +182,7 @@
 
     <div class="wrap">
       <h2 class="section-title">Our research</h2>
-      <div class="feature-grid">
+      <div class="feature-grid feature-grid-3">
         <a class="feature feature-atlas" href="research.html#atlas">
           <img src="images/atlas-detector.jpg" alt="">
           <div class="feature-text">
@@ -258,7 +263,7 @@
   <footer class="site-footer">
     <div class="wrap">
       <span>High Energy Physics Group, Department of Physics, Simon Fraser University, Burnaby, BC</span>
-      <span><a href="https://www.sfu.ca/physics.html">SFU Physics</a> · <a href="https://github.com/annabellegrimes/sfu-hep-website">Edit this site on GitHub</a></span>
+      <span><a href="https://www.sfu.ca/physics.html">SFU Physics</a></span>
     </div>
   </footer>
   <!-- END FOOTER -->

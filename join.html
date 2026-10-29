@@ -32,8 +32,9 @@
     <div class="wrap page-hero-text">
       <p class="eyebrow">Join us</p>
       <h1>Do research at the frontier of physics</h1>
-      <p class="lead">We welcome graduate and undergraduate students who want to do research in particle and astroparticle physics.</p>
+      <p class="lead">Analyze collisions from the world's largest particle accelerator, hunt for neutrinos from deep space, or help build a telescope on the floor of the Pacific. We welcome graduate and undergraduate students who want to try.</p>
       <nav class="jump-links" aria-label="On this page">
+        <a href="#experiments">Choose an experiment</a>
         <a href="#graduate">Graduate students</a>
         <a href="#undergraduate">Undergraduate research</a>
       </nav>
@@ -42,38 +43,91 @@
   </section>
 
   <main class="research">
-    <section class="research-section">
+    <!-- Facts strip: how far each experiment is from the surface, one colour per experiment. Figures are from research.html. -->
+    <section class="facts facts-places">
       <div class="wrap">
-        <h2 class="section-title">What you'll do</h2>
-        <p class="lead">Students in the group analyze ATLAS data, help build detectors for the ATLAS upgrade and for P&#8209;ONE, and learn large-scale computing along the way.</p>
-        <div class="topic-grid">
-          <div class="topic">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
-            <h4>Analyze ATLAS data</h4>
-            <p>Study proton collisions from the Large Hadron Collider.</p>
-          </div>
-          <div class="topic">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg>
-            <h4>Build detectors</h4>
-            <p>Help build hardware for the ATLAS upgrade and for P&#8209;ONE.</p>
-          </div>
-          <div class="topic">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><circle cx="7" cy="7" r="1"/><circle cx="7" cy="17" r="1"/></svg>
-            <h4>Compute at scale</h4>
-            <p>Learn large-scale computing on the Tier-1 Centre and national supercomputers.</p>
-          </div>
+        <div class="fact fact-atlas"><strong>100 m</strong><span>underground at CERN, Geneva</span></div>
+        <div class="fact fact-ice"><strong>2,450 m</strong><span>deep in the Antarctic ice</span></div>
+        <div class="fact fact-pone"><strong>2,700 m</strong><span>down on the Pacific seafloor</span></div>
+      </div>
+    </section>
+
+    <!-- Choose an experiment: the same photo cards as the home page, written for students. What each card lists comes from the
+         "Open to students" boxes on research.html, which the links go to. Photo credits are at the bottom of the page. -->
+    <section id="experiments" class="research-section">
+      <div class="wrap">
+        <h2 class="section-title">Choose your experiment</h2>
+        <p class="lead">Students join one of three experiments, each in one of the most extreme places on Earth. Most combine physics analysis with hands-on work on the detector.</p>
+        <div class="feature-grid feature-grid-3">
+          <a class="feature feature-atlas" href="research.html#atlas">
+            <img src="images/atlas-detector.jpg" alt="">
+            <div class="feature-text">
+              <span class="tag">At the Large Hadron Collider</span>
+              <h3>ATLAS</h3>
+              <p>Measure the Higgs boson and search for new particles with machine learning, and assemble and test petals for the new ATLAS tracker with the SFU and TRIUMF team.</p>
+              <span class="more">Research areas for students →</span>
+            </div>
+          </a>
+          <a class="feature feature-ice" href="research.html#icecube">
+            <img src="images/icecube-lab.jpg" alt="">
+            <div class="feature-text">
+              <span class="tag">At the South Pole</span>
+              <h3>IceCube</h3>
+              <p>Track down the sources of cosmic neutrinos, measure how neutrinos change type as they cross the Earth, and search the data for dark matter, in a collaboration of more than 450 people in 14 countries.</p>
+              <span class="more">Research areas for students →</span>
+            </div>
+          </a>
+          <a class="feature feature-pone" href="research.html#p-one">
+            <img src="images/p-one-modules.jpg" alt="">
+            <div class="feature-text">
+              <span class="tag">In the deep Pacific</span>
+              <h3>P&#8209;ONE</h3>
+              <p>A young experiment that students help shape: build calibration hardware, track the detector lines as they sway in the currents, and analyze the very first data.</p>
+              <span class="more">Research areas for students →</span>
+            </div>
+          </a>
         </div>
       </div>
     </section>
 
     <section class="research-section section-alt">
       <div class="wrap">
+        <h2 class="section-title">What you'll learn</h2>
+        <p class="lead">Whichever experiment you join, you'll pick up skills that are in demand in physics and well beyond it.</p>
+        <div class="topic-grid">
+          <div class="topic">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18"/><path d="M5 20v-4M9 20v-7M13 20v-12M17 20v-6"/></svg>
+            <h4>Data analysis</h4>
+            <p>Find a rare signal in a mountain of data, with statistics and machine learning.</p>
+          </div>
+          <div class="topic">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg>
+            <h4>Detector hardware</h4>
+            <p>Build and test real detector parts, from tracker petals to deep-sea instruments.</p>
+          </div>
+          <div class="topic">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><circle cx="7" cy="7" r="1"/><circle cx="7" cy="17" r="1"/></svg>
+            <h4>Computing at scale</h4>
+            <p>Run analyses over petabytes on the ATLAS Tier-1 centre and national supercomputers.</p>
+          </div>
+          <div class="topic">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18z"/></svg>
+            <h4>Global teamwork</h4>
+            <p>Work in international collaborations and present your results to them.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-section">
+      <div class="wrap">
         <div class="paths">
           <div id="graduate" class="path">
             <span class="tag tag-neutral">MSc and PhD</span>
             <h2 class="section-title">Graduate students</h2>
             <ol class="steps steps-red">
-              <li><h4>Find a supervisor</h4><p>Look through the <a href="people.html#faculty">faculty</a> and contact one whose research interests you.</p></li>
+              <li><h4>Pick an experiment</h4><p>Read about <a href="research.html">ATLAS, IceCube and P&#8209;ONE</a> and see which research areas excite you.</p></li>
+              <li><h4>Contact a supervisor</h4><p>Email a faculty member on that experiment (see <a href="#contacts">who to contact</a>). Say what interests you and ask whether they are taking students.</p></li>
               <li><h4>Apply</h4><p>Apply through the <a href="https://www.sfu.ca/physics.html">SFU Department of Physics</a>.</p></li>
             </ol>
           </div>
@@ -92,6 +146,38 @@
       </div>
     </section>
 
+    <!-- Who to contact: faculty by experiment, linked to their SFU pages (the same links as people.html). Update when faculty join or leave. -->
+    <section id="contacts" class="research-section section-alt">
+      <div class="wrap">
+        <h2 class="section-title">Who to contact</h2>
+        <p class="lead">Not sure where to start? Get in touch with a faculty member on the experiment that interests you.</p>
+        <div class="contact-grid">
+          <div class="contact contact-atlas">
+            <h3>ATLAS</h3>
+            <ul>
+              <li><a href="https://www.sfu.ca/physics/people/faculty/mdanning.html">Matthias Danninger</a></li>
+              <li><a href="https://www.sfu.ca/physics/people/faculty/doneil.html">Dugan O'Neil</a></li>
+              <li><a href="https://www.sfu.ca/physics/people/faculty/stelzer.html">Bernd Stelzer</a></li>
+            </ul>
+          </div>
+          <div class="contact contact-ice">
+            <h3>IceCube</h3>
+            <ul>
+              <li><a href="https://www.sfu.ca/physics/people/faculty/dgrant.html">Darren Grant</a></li>
+            </ul>
+          </div>
+          <div class="contact contact-pone">
+            <h3>P&#8209;ONE</h3>
+            <ul>
+              <li><a href="https://www.sfu.ca/physics/people/faculty/mdanning.html">Matthias Danninger</a></li>
+              <li><a href="https://www.sfu.ca/physics/people/faculty/dgrant.html">Darren Grant</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="contact-more">Curious what students work on? <a href="people.html#students">Meet our current students</a> or <a href="publications.html">read past theses</a>.</p>
+      </div>
+    </section>
+
     <section class="cta">
       <div class="wrap">
         <div>
@@ -101,13 +187,17 @@
         <a class="button button-light" href="people.html#faculty">Meet the faculty</a>
       </div>
     </section>
+
+    <div class="wrap">
+      <p class="credits">Photos: ATLAS detector by CERN, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:ATLAS.jpg">Wikimedia Commons</a>. P-ONE modules by Simon Fraser University. IceCube Lab by the U.S. Geological Survey, public domain, via <a href="https://www.usgs.gov/media/images/icecube-lab-south-pole">USGS</a>.</p>
+    </div>
   </main>
 
   <!-- FOOTER: the same block is on every page. -->
   <footer class="site-footer">
     <div class="wrap">
       <span>High Energy Physics Group, Department of Physics, Simon Fraser University, Burnaby, BC</span>
-      <span><a href="https://www.sfu.ca/physics.html">SFU Physics</a> · <a href="https://github.com/annabellegrimes/sfu-hep-website">Edit this site on GitHub</a></span>
+      <span><a href="https://www.sfu.ca/physics.html">SFU Physics</a></span>
     </div>
   </footer>
   <!-- END FOOTER -->

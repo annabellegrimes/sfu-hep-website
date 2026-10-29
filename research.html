@@ -32,17 +32,26 @@
     <div class="wrap page-hero-text">
       <p class="eyebrow">Research</p>
       <h1>Physics at the extremes</h1>
-      <p class="lead">The group works on three experiments, each in one of the world's most extreme environments:</p>
-      <!-- Same as the home page banner: one line per experiment, with a dot in its colour. Each line links to its section below. -->
-      <ul class="hero-places">
-        <li class="place-atlas"><a href="#atlas"><strong>ATLAS</strong>, deep underground at CERN's Large Hadron Collider</a></li>
-        <li class="place-ice"><a href="#icecube"><strong>IceCube</strong>, in the ancient ice beneath the South Pole</a></li>
-        <li class="place-pone"><a href="#p-one"><strong>P&#8209;ONE</strong>, on the dark floor of the Pacific Ocean</a></li>
-      </ul>
+      <!-- The experiments themselves are listed by the buttons just below, and each chapter's banner says where it is. -->
+      <p class="lead">The group works on three experiments: one deep underground, one in the Antarctic ice and one on the Pacific seafloor.</p>
     </div>
   </section>
 
   <main class="research">
+
+    <!-- The three chapters are wrapped in .chapters so the project switcher sticks to the top only while you are inside them. -->
+    <div class="chapters">
+
+    <!-- PROJECT SWITCHER: stays at the top of the screen while you scroll through the chapters. js/project-switch.js (linked at the
+         bottom of the page) highlights the chapter you are reading and fills the thin line under the bar as you go.
+         To add an experiment, add a link here whose href matches its chapter's id, and a colour for it in style.css (.project-switch). -->
+    <nav class="project-switch" aria-label="Experiments">
+      <div class="wrap">
+        <a class="switch-atlas" href="#atlas">ATLAS</a>
+        <a class="switch-ice" href="#icecube">IceCube</a>
+        <a class="switch-pone" href="#p-one">P&#8209;ONE</a>
+      </div>
+    </nav>
 
     <!-- ===================== ATLAS (red) ===================== -->
     <section id="atlas" class="chapter chapter-atlas">
@@ -62,7 +71,7 @@
           <div class="split">
             <div>
               <p class="lead">SFU physicists study the properties of the Higgs boson, search for new long-lived particles and other signs of physics beyond the Standard Model, and work on detector calibration and track reconstruction.</p>
-              <p>In 2012, ATLAS and its sister experiment CMS discovered the Higgs boson, the particle tied to the field that gives other fundamental particles their mass. It completed the Standard Model of particle physics, but the Standard Model still can't explain dark matter or why the universe is made of matter rather than antimatter. So ATLAS also hunts for new particles that could. ATLAS sees up to 1.7 billion proton collisions a second, and its trigger system keeps only the most promising: roughly one in a million.</p>
+              <p>In 2012, ATLAS and its sister experiment CMS discovered the Higgs boson,<sup class="ref"><a href="https://home.cern/science/physics/higgs-boson" target="_blank" rel="noopener" title="The Higgs boson">2</a></sup> the particle tied to the field that gives other fundamental particles their mass. It completed the Standard Model of particle physics, but the Standard Model still can't explain dark matter or why the universe is made of matter rather than antimatter. So ATLAS also hunts for new particles that could. ATLAS sees up to 1.7 billion proton collisions a second, and its trigger system keeps only the most promising: roughly one in a million.<sup class="ref"><a href="https://atlas.cern/detector/trigger-daq" target="_blank" rel="noopener" title="Trigger and Data Acquisition">3</a></sup></p>
             </div>
             <!-- Photos: copy one <figure> block to add another. Always keep the credit line; most images we can use require it. -->
             <figure class="photo-figure">
@@ -160,11 +169,11 @@
                 <text x="792" y="443" dy="1" fill="#ffffff">3</text>
               </g>
             </svg>
-            <figcaption>Artistic interpretation. The numbers match the steps.</figcaption>
+            <figcaption>AI-rtistic interpretation. The numbers match the steps.</figcaption>
           </figure>
           <ol class="steps">
             <li><h4>Protons collide</h4><p>Beams of protons from the Large Hadron Collider collide at the centre of ATLAS.</p></li>
-            <li><h4>Tracks are recorded</h4><p>Charged particles curve in the 2-tesla field of a solenoid magnet, and the inner tracker records their paths. The curvature gives their momentum. SFU helps build the new tracker.</p></li>
+            <li><h4>Tracks are recorded</h4><p>Charged particles curve in the 2-tesla field of a solenoid magnet,<sup class="ref"><a href="https://atlas.cern/detector/magnet-system" target="_blank" rel="noopener" title="Magnet System">4</a></sup> and the inner tracker records their paths. The curvature gives their momentum. SFU helps build the new tracker.</p></li>
             <li><h4>Energy is measured</h4><p>Calorimeters stop almost all particles and measure their energy. Muons get through and are measured again in the muon chambers; neutrinos escape unseen, showing up as missing momentum.</p></li>
           </ol>
           </div>
@@ -173,13 +182,28 @@
           <div class="video-feature">
             <figure class="video-figure">
               <div class="video-frame">
-                <iframe src="https://www.youtube-nocookie.com/embed/ksKP-Vvh52k?rel=0" title="360° video: Step inside the ATLAS Experiment" loading="lazy" allow="accelerometer; gyroscope; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                <iframe src="https://www.youtube-nocookie.com/embed/ksKP-Vvh52k?rel=0&amp;autoplay=1&amp;mute=1&amp;playsinline=1" title="360° video: Step inside the ATLAS Experiment" loading="lazy" allow="autoplay; accelerometer; gyroscope; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
               </div>
               <figcaption>Video: CERN, 2016 · <a href="https://www.youtube.com/watch?v=ksKP-Vvh52k">Watch on YouTube</a></figcaption>
             </figure>
             <div>
               <h3 class="subhead">Step inside ATLAS</h3>
               <p>A 360° look around the detector in its cavern, 100 metres below CERN. Drag the video, or move your phone, to look in any direction.</p>
+            </div>
+          </div>
+
+          <!-- Video: CERN's 360° footage of ATLAS, CMS and computing, edited by the group to add the SFU Tier-1 centre. Embedded from YouTube (nocookie, as above). -->
+          <div class="video-feature">
+            <figure class="video-figure">
+              <div class="video-frame">
+                <iframe src="https://www.youtube-nocookie.com/embed/lqN57L39JQo?rel=0&amp;autoplay=1&amp;mute=1&amp;playsinline=1" title="360° video: LHC experiments (ATLAS and CMS) and computing" loading="lazy" allow="autoplay; accelerometer; gyroscope; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              </div>
+              <figcaption>Video: CERN, edited by Prof. <a href="people.html#stelzer">Bernd Stelzer</a> to add the SFU Tier-1 centre, from his YouTube channel QuantumBernd · <a href="https://www.youtube.com/watch?v=lqN57L39JQo">Watch on YouTube</a></figcaption>
+            </figure>
+            <div>
+              <h3 class="subhead">From collision to data centre</h3>
+              <p>Follow the data from the ATLAS and CMS detectors to the computers that store and analyze it, including the ATLAS Tier-1 centre here at SFU.</p>
+              <p><a href="computing.html">More about ATLAS computing at SFU →</a></p>
             </div>
           </div>
 
@@ -200,9 +224,23 @@
             <div class="callout-stat"><strong>~100</strong><span>of the 400 petals worldwide</span></div>
             <div>
               <h3>The new ATLAS Inner Tracker (ITk)</h3>
-              <p>For the High-Luminosity LHC, which is due to start around 2030 with about ten times as many collisions, ATLAS is replacing its whole inner detector with a new all-silicon tracker. The SFU and TRIUMF team was the first to produce a petal for installation (a wedge of silicon strip sensors for the tracker's end-caps) and plans to make about 100 of the 400 petals being produced worldwide.</p>
+              <p>For the High-Luminosity LHC, which is due to start around 2030 with about ten times as many collisions,<sup class="ref"><a href="https://home.cern/press/media-kits/hl-lhc-media-kit/" target="_blank" rel="noopener" title="High-Luminosity LHC media kit">5</a></sup> ATLAS is replacing its whole inner detector with a new all-silicon tracker. The SFU and TRIUMF team was the first to produce a petal for installation (a wedge of silicon strip sensors for the tracker's end-caps) and plans to make about 100 of the 400 petals being produced worldwide.<sup class="ref"><a href="https://www.sfu.ca/sfunews/stories/2026/06/searching-for-the-next-higgs-boson--sfu-team-drives-global-effor.html" target="_blank" rel="noopener" title="Searching for the next Higgs boson: SFU team drives global effort to boost science experiment at Large Hadron Collider">6</a></sup></p>
             </div>
             <!-- TODO: add a photo of the ITk petal here (ask the SFU/TRIUMF team for one we can use). -->
+          </div>
+
+          <!-- Video: an ITk petal, embedded from YouTube (nocookie, as above). -->
+          <div class="video-feature">
+            <figure class="video-figure">
+              <div class="video-frame">
+                <iframe src="https://www.youtube-nocookie.com/embed/6VzCVn3Wd2U?rel=0&amp;autoplay=1&amp;mute=1&amp;playsinline=1" title="ATLAS ITk PPB petal" loading="lazy" allow="autoplay; accelerometer; gyroscope; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              </div>
+              <figcaption>Video: Prof. <a href="people.html#stelzer">Bernd Stelzer</a>, from his YouTube channel QuantumBernd · <a href="https://www.youtube.com/watch?v=6VzCVn3Wd2U">Watch on YouTube</a></figcaption>
+            </figure>
+            <div>
+              <h3 class="subhead">A petal up close</h3>
+              <p>A look at an ITk petal: a wedge of silicon strip sensors, one of about 100 that the SFU and TRIUMF team is building for the new tracker's end-caps.</p>
+            </div>
           </div>
 
           <div class="split split-top">
@@ -210,21 +248,38 @@
               <h3 class="subhead">Where things stand</h3>
               <!-- Timeline: add a <li> when ATLAS reaches a milestone. class="done" for finished steps, class="now" for the current one. -->
               <ol class="timeline timeline-red">
-                <li class="done"><span class="when">2008</span>The LHC's first proton beams circulate, with ATLAS complete and ready.</li>
-                <li class="done"><span class="when">2010</span>First collisions at 7&nbsp;TeV, a record energy at the time.</li>
-                <li class="done"><span class="when">July 2012</span>ATLAS and CMS announce the discovery of the Higgs boson.</li>
-                <li class="done"><span class="when">2015–2018</span>Run 2, at 13&nbsp;TeV.</li>
-                <li class="done"><span class="when">2022–2026</span>Run 3, at a record 13.6&nbsp;TeV, ends on 27 June 2026 with ATLAS's largest dataset yet.</li>
+                <li class="done"><span class="when">2008</span>The LHC's first proton beams circulate, with ATLAS complete and ready.<sup class="ref"><a href="https://home.cern/first-beam-in-the-lhc-accelerating-science/" target="_blank" rel="noopener" title="First beam in the LHC: accelerating science">7</a></sup></li>
+                <li class="done"><span class="when">2010</span>First collisions at 7&nbsp;TeV, a record energy at the time.<sup class="ref"><a href="https://home.cern/lhc-research-programme-gets-underway/" target="_blank" rel="noopener" title="LHC research programme gets underway">8</a></sup></li>
+                <li class="done"><span class="when">July 2012</span>ATLAS and CMS announce the discovery of the Higgs boson.<sup class="ref"><a href="https://home.cern/science/physics/higgs-boson" target="_blank" rel="noopener" title="The Higgs boson">2</a></sup></li>
+                <li class="done"><span class="when">2015–2018</span>Run 2, at 13&nbsp;TeV.<sup class="ref"><a href="https://home.cern/news/press-release/cern/lhc-experiments-are-back-business-new-record-energy" target="_blank" rel="noopener" title="LHC experiments are back in business at a new record energy">9</a></sup></li>
+                <li class="done"><span class="when">2022–2026</span>Run 3, at a record 13.6&nbsp;TeV, ends on 27 June 2026 with ATLAS's largest dataset yet.<sup class="ref"><a href="https://cerncourier.com/the-lhc-completes-its-third-run/" target="_blank" rel="noopener" title="The LHC completes its third run">10</a></sup></li>
                 <li class="now"><span class="when">Now</span>A long shutdown: ATLAS is being taken apart and rebuilt for the High-Luminosity LHC, and the first petals are going into the new tracker's end-caps. Meanwhile, the Run 3 data are analyzed.</li>
-                <li><span class="when">2030</span>Beams return for the High-Luminosity LHC, with about ten times as many collisions over its lifetime.</li>
+                <li><span class="when">2030</span>Beams return for the High-Luminosity LHC, with about ten times as many collisions over its lifetime.<sup class="ref"><a href="https://home.cern/press/media-kits/hl-lhc-media-kit/" target="_blank" rel="noopener" title="High-Luminosity LHC media kit">5</a></sup></li>
               </ol>
             </div>
             <!-- Numbers card: the same as P-ONE's, in red (class "depth-card-atlas"). Figures from atlas.cern. -->
             <div class="depth-card depth-card-atlas" aria-label="ATLAS in numbers">
-              <div><strong>46 m</strong><span>long and 25 m across</span></div>
-              <div><strong>7,000 t</strong><span>about the weight of the Eiffel Tower</span></div>
-              <div><strong>100 m</strong><span>underground, in a cavern at CERN</span></div>
+              <div><strong>46 m</strong><span>long and 25 m across<sup class="ref"><a href="https://atlas.cern/detector" target="_blank" rel="noopener" title="The ATLAS detector">1</a></sup></span></div>
+              <div><strong>7,000 t</strong><span>about the weight of the Eiffel Tower<sup class="ref"><a href="https://atlas.cern/detector" target="_blank" rel="noopener" title="The ATLAS detector">1</a></sup></span></div>
+              <div><strong>100 m</strong><span>underground, in a cavern at CERN<sup class="ref"><a href="https://atlas.cern/detector" target="_blank" rel="noopener" title="The ATLAS detector">1</a></sup></span></div>
             </div>
+          </div>
+
+          <!-- Sources: the numbers in the text above link to these. Keep the numbering in step when adding one. -->
+          <div class="sources">
+            <h4>Sources</h4>
+            <ol>
+              <li><a href="https://atlas.cern/detector" target="_blank" rel="noopener">The ATLAS detector</a>, ATLAS Collaboration</li>
+              <li><a href="https://home.cern/science/physics/higgs-boson" target="_blank" rel="noopener">The Higgs boson</a>, CERN</li>
+              <li><a href="https://atlas.cern/detector/trigger-daq" target="_blank" rel="noopener">Trigger and Data Acquisition</a>, ATLAS Collaboration</li>
+              <li><a href="https://atlas.cern/detector/magnet-system" target="_blank" rel="noopener">Magnet System</a>, ATLAS Collaboration</li>
+              <li><a href="https://home.cern/press/media-kits/hl-lhc-media-kit/" target="_blank" rel="noopener">High-Luminosity LHC media kit</a>, CERN</li>
+              <li><a href="https://www.sfu.ca/sfunews/stories/2026/06/searching-for-the-next-higgs-boson--sfu-team-drives-global-effor.html" target="_blank" rel="noopener">Searching for the next Higgs boson: SFU team drives global effort to boost science experiment at Large Hadron Collider</a>, SFU News, June 2026</li>
+              <li><a href="https://home.cern/first-beam-in-the-lhc-accelerating-science/" target="_blank" rel="noopener">First beam in the LHC: accelerating science</a>, CERN, 10 September 2008</li>
+              <li><a href="https://home.cern/lhc-research-programme-gets-underway/" target="_blank" rel="noopener">LHC research programme gets underway</a>, CERN, 30 March 2010</li>
+              <li><a href="https://home.cern/news/press-release/cern/lhc-experiments-are-back-business-new-record-energy" target="_blank" rel="noopener">LHC experiments are back in business at a new record energy</a>, CERN, 3 June 2015</li>
+              <li><a href="https://cerncourier.com/the-lhc-completes-its-third-run/" target="_blank" rel="noopener">The LHC completes its third run</a>, CERN Courier, July 2026</li>
+            </ol>
           </div>
 
           <p class="chapter-links"><a href="https://inspirehep.net">ATLAS papers on INSPIRE →</a> <a href="https://atlas.cern/Updates/News">ATLAS news →</a> <a href="computing.html">ATLAS computing at SFU →</a></p>
@@ -249,8 +304,8 @@
           <div class="split">
             <div>
               <!-- TODO: ask Darren Grant to check this sentence and add what SFU members work on in IceCube. -->
-              <p class="lead">IceCube is P&#8209;ONE's older sibling: the same idea, in ice instead of seawater. SFU's Professor Darren Grant was spokesperson of the IceCube Collaboration from 2017 to 2021, and also works on P&#8209;ONE.</p>
-              <p>Neutrinos barely interact with matter, so they reach us straight from the most violent places in the universe, such as the surroundings of supermassive black holes, without being absorbed or deflected. IceCube was the first detector to see high-energy neutrinos from beyond our solar system, opening up neutrino astronomy. Its densely instrumented DeepCore region, and now the Upgrade, also make it a precision experiment on the neutrinos themselves.</p>
+              <p class="lead">IceCube is P&#8209;ONE's older sibling: the same idea, in ice instead of seawater. SFU's Professor <a href="people.html#grant">Darren Grant</a> was spokesperson of the IceCube Collaboration from 2017 to 2021,<sup class="ref"><a href="https://icecube.wisc.edu/about/organization/" target="_blank" rel="noopener" title="Organization: spokespersons">2</a></sup> and also works on P&#8209;ONE.</p>
+              <p>Neutrinos barely interact with matter, so they reach us straight from the most violent places in the universe, such as the surroundings of supermassive black holes, without being absorbed or deflected. IceCube was the first detector to see high-energy neutrinos from beyond our solar system, opening up neutrino astronomy.<sup class="ref"><a href="https://doi.org/10.1126/science.1242856" target="_blank" rel="noopener" title="Evidence for high-energy extraterrestrial neutrinos at the IceCube detector">3</a></sup> Its densely instrumented DeepCore region, and now the Upgrade, also make it a precision experiment on the neutrinos themselves.</p>
             </div>
             <figure class="photo-figure">
               <img src="images/icecube-lab-night.jpg" alt="The IceCube Lab lit red by its safety lights under a starry polar night sky, with the Milky Way overhead and green aurora to the right.">
@@ -357,12 +412,12 @@
                 <text x="600" y="167" dy="1" fill="#ffffff">3</text>
               </g>
             </svg>
-            <figcaption>Artistic interpretation, not to scale. The numbers match the steps.</figcaption>
+            <figcaption>AI-rtistic interpretation, not to scale. The numbers match the steps.</figcaption>
           </figure>
           <ol class="steps">
             <li><h4>A neutrino interacts</h4><p>Now and then a neutrino interacts in the ice or the rock below, producing charged particles such as a muon. Many come up through the Earth, which blocks every other kind of particle.</p></li>
             <li><h4>Light is made</h4><p>Those particles travel faster than light does in ice, so they give off faint blue Cherenkov light, which carries far through the deep, very clear ice.</p></li>
-            <li><h4>Modules detect it</h4><p>Each optical module records the light with a 25&nbsp;cm photomultiplier tube, then digitizes and time-stamps it and sends it up the cable to the IceCube Lab on the surface.</p></li>
+            <li><h4>Modules detect it</h4><p>Each optical module records the light with a 25&nbsp;cm photomultiplier tube,<sup class="ref"><a href="https://icecube.wisc.edu/science/icecube/" target="_blank" rel="noopener" title="The IceCube Neutrino Observatory">1</a></sup> then digitizes and time-stamps it and sends it up the cable to the IceCube Lab on the surface.</p></li>
           </ol>
           </div>
 
@@ -380,7 +435,7 @@
             </figure>
             <div>
               <h3 class="subhead">Drilling into the South Pole</h3>
-              <p>This time-lapse shows the drill site being moved into position at the South Pole for the IceCube Upgrade. Crews used a 5-megawatt hot-water drill to melt holes about 2.4 km deep into the ice, about three days per hole, then lowered the new strings of sensors into them before the water froze again.</p>
+              <p>This time-lapse shows the drill site being moved into position at the South Pole for the IceCube Upgrade. Crews used a 5-megawatt hot-water drill to melt holes about 2.4 km deep into the ice, about three days per hole,<sup class="ref"><a href="https://icecube.wisc.edu/news/press-releases/2026/02/the-icecube-neutrino-observatory-gets-a-major-upgrade-beneath-the-ice/" target="_blank" rel="noopener" title="The IceCube Neutrino Observatory gets a major upgrade beneath the ice">7</a>,<a href="https://iihe.ac.be/icecube-upgrade-completed-2026/" target="_blank" rel="noopener" title="IceCube Upgrade completed">8</a></sup> then lowered the new strings of sensors into them before the water froze again.</p>
             </div>
           </div>
 
@@ -388,7 +443,7 @@
           <div class="student-work">
             <p class="student-eyebrow">Open to students</p>
             <h3 class="subhead">Research areas</h3>
-            <p>Students join an international collaboration of more than 450 people from 58 institutions in 14 countries, working in areas like these.</p>
+            <p>Students join an international collaboration of more than 450 people from 58 institutions in 14 countries,<sup class="ref"><a href="https://icecube.wisc.edu/about/overview/" target="_blank" rel="noopener" title="IceCube overview">6</a></sup> working in areas like these.</p>
             <ul class="student-list">
               <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.2 5.8L20 11l-5.8 2.2L12 19l-2.2-5.8L4 11l5.8-2.2z"/></svg><div><strong>Neutrino astronomy</strong>Finding the sources of high-energy cosmic neutrinos, such as the active galaxy NGC&nbsp;1068, alone or with telescopes that see light and gravitational waves.</div></li>
               <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9c2.5-4 5-4 7.5 0s5 4 7.5 0 3.5-2 5-1.5"/><path d="M2 15c2.5 4 5 4 7.5 0s5-4 7.5 0 3.5 2 5 1.5"/></svg><div><strong>Neutrino oscillations</strong>Measuring how neutrinos made in the atmosphere change type as they cross the Earth, with DeepCore and the new Upgrade.</div></li>
@@ -402,7 +457,7 @@
             <div class="callout-stat"><strong>600+</strong><span>new sensors and calibration devices</span></div>
             <div>
               <h3>The IceCube Upgrade</h3>
-              <p>In the 2025/26 South Pole season, five new strings went into the ice at the bottom centre of IceCube, far more densely instrumented than the originals. Their new sensors, including multi-photomultiplier modules, are two to three times as sensitive. The Upgrade will sharpen measurements of neutrino oscillations, and its calibration devices will map the ice so precisely that 15 years of archived data can be reanalyzed. It also tests sensor designs for IceCube-Gen2.</p>
+              <p>In the 2025/26 South Pole season, five new strings went into the ice at the bottom centre of IceCube, far more densely instrumented than the originals. Their new sensors, including multi-photomultiplier modules, are two to three times as sensitive. The Upgrade will sharpen measurements of neutrino oscillations, and its calibration devices will map the ice so precisely that 15 years of archived data can be reanalyzed. It also tests sensor designs for IceCube-Gen2.<sup class="ref"><a href="https://icecube.wisc.edu/news/press-releases/2026/02/the-icecube-neutrino-observatory-gets-a-major-upgrade-beneath-the-ice/" target="_blank" rel="noopener" title="The IceCube Neutrino Observatory gets a major upgrade beneath the ice">7</a></sup></p>
             </div>
           </div>
 
@@ -411,22 +466,38 @@
               <h3 class="subhead">Where things stand</h3>
               <!-- Timeline: add a <li> when the project reaches a milestone. class="done" for finished steps, class="now" for the current one. -->
               <ol class="timeline timeline-ice">
-                <li class="done"><span class="when">December 2010</span>The 86-string detector is completed at the South Pole.</li>
-                <li class="done"><span class="when">2013</span>First evidence of high-energy neutrinos from beyond the solar system.</li>
-                <li class="done"><span class="when">2018</span>A neutrino is traced to a flaring blazar, TXS&nbsp;0506+056: the first evidence of a source.</li>
-                <li class="done"><span class="when">2022</span>Evidence of neutrinos from the active galaxy NGC&nbsp;1068.</li>
-                <li class="done"><span class="when">2025/26</span>The IceCube Upgrade: five new, densely instrumented strings with more than 600 new sensors and calibration devices, at the bottom centre of the detector.</li>
-                <li class="done"><span class="when">October 2026</span>Francis Halzen, IceCube's principal investigator, receives the Nobel Prize in Physics.</li>
+                <li class="done"><span class="when">December 2010</span>The 86-string detector is completed at the South Pole.<sup class="ref"><a href="https://icecube.wisc.edu/science/icecube/" target="_blank" rel="noopener" title="The IceCube Neutrino Observatory">1</a></sup></li>
+                <li class="done"><span class="when">2013</span>First evidence of high-energy neutrinos from beyond the solar system.<sup class="ref"><a href="https://doi.org/10.1126/science.1242856" target="_blank" rel="noopener" title="Evidence for high-energy extraterrestrial neutrinos at the IceCube detector">3</a></sup></li>
+                <li class="done"><span class="when">2018</span>A neutrino is traced to a flaring blazar, TXS&nbsp;0506+056: the first evidence of a source.<sup class="ref"><a href="https://doi.org/10.1126/science.aat1378" target="_blank" rel="noopener" title="Multimessenger observations of a flaring blazar coincident with high-energy neutrino IceCube-170922A">4</a></sup></li>
+                <li class="done"><span class="when">2022</span>Evidence of neutrinos from the active galaxy NGC&nbsp;1068.<sup class="ref"><a href="https://doi.org/10.1126/science.abg3395" target="_blank" rel="noopener" title="Evidence for neutrino emission from the nearby active galaxy NGC 1068">5</a></sup></li>
+                <li class="done"><span class="when">2025/26</span>The IceCube Upgrade: five new, densely instrumented strings with more than 600 new sensors and calibration devices, at the bottom centre of the detector.<sup class="ref"><a href="https://icecube.wisc.edu/news/press-releases/2026/02/the-icecube-neutrino-observatory-gets-a-major-upgrade-beneath-the-ice/" target="_blank" rel="noopener" title="The IceCube Neutrino Observatory gets a major upgrade beneath the ice">7</a></sup></li>
+                <li class="done"><span class="when">October 2026</span>Francis Halzen, IceCube's principal investigator, receives the Nobel Prize in Physics.<sup class="ref"><a href="https://www.nobelprize.org/prizes/physics/2026/summary/" target="_blank" rel="noopener" title="The Nobel Prize in Physics 2026">9</a></sup></li>
                 <li class="now"><span class="when">Now</span>Commissioning the Upgrade's new instruments, which will sharpen oscillation measurements and how well the ice is understood.</li>
-                <li><span class="when">After that</span>The proposed IceCube-Gen2, with eight times IceCube's instrumented volume.</li>
+                <li><span class="when">After that</span>The proposed IceCube-Gen2, with eight times IceCube's instrumented volume.<sup class="ref"><a href="https://icecube.wisc.edu/news/press-releases/2026/02/the-icecube-neutrino-observatory-gets-a-major-upgrade-beneath-the-ice/" target="_blank" rel="noopener" title="The IceCube Neutrino Observatory gets a major upgrade beneath the ice">7</a></sup></li>
               </ol>
             </div>
             <!-- Numbers card: the same as the other chapters', in purple (class "depth-card-ice"). -->
             <div class="depth-card depth-card-ice" aria-label="IceCube in numbers">
-              <div><strong>1 km³</strong><span>of ice instrumented with sensors</span></div>
-              <div><strong>5,160</strong><span>optical modules on 86 strings</span></div>
-              <div><strong>1,450–2,450 m</strong><span>depth of the sensors</span></div>
+              <div><strong>1 km³</strong><span>of ice instrumented with sensors<sup class="ref"><a href="https://icecube.wisc.edu/science/icecube/" target="_blank" rel="noopener" title="The IceCube Neutrino Observatory">1</a></sup></span></div>
+              <div><strong>5,160</strong><span>optical modules on 86 strings<sup class="ref"><a href="https://icecube.wisc.edu/science/icecube/" target="_blank" rel="noopener" title="The IceCube Neutrino Observatory">1</a></sup></span></div>
+              <div><strong>1,450–2,450 m</strong><span>depth of the sensors<sup class="ref"><a href="https://icecube.wisc.edu/science/icecube/" target="_blank" rel="noopener" title="The IceCube Neutrino Observatory">1</a></sup></span></div>
             </div>
+          </div>
+
+          <!-- Sources: the numbers in the text above link to these. Keep the numbering in step when adding one. -->
+          <div class="sources">
+            <h4>Sources</h4>
+            <ol>
+              <li><a href="https://icecube.wisc.edu/science/icecube/" target="_blank" rel="noopener">The IceCube Neutrino Observatory</a>, IceCube Collaboration</li>
+              <li><a href="https://icecube.wisc.edu/about/organization/" target="_blank" rel="noopener">Organization: spokespersons</a>, IceCube Collaboration</li>
+              <li><a href="https://doi.org/10.1126/science.1242856" target="_blank" rel="noopener">Evidence for high-energy extraterrestrial neutrinos at the IceCube detector</a>, Science 342, 1242856 (2013)</li>
+              <li><a href="https://doi.org/10.1126/science.aat1378" target="_blank" rel="noopener">Multimessenger observations of a flaring blazar coincident with high-energy neutrino IceCube-170922A</a>, Science 361, eaat1378 (2018)</li>
+              <li><a href="https://doi.org/10.1126/science.abg3395" target="_blank" rel="noopener">Evidence for neutrino emission from the nearby active galaxy NGC 1068</a>, Science 378, 538 (2022)</li>
+              <li><a href="https://icecube.wisc.edu/about/overview/" target="_blank" rel="noopener">IceCube overview</a>, IceCube Collaboration</li>
+              <li><a href="https://icecube.wisc.edu/news/press-releases/2026/02/the-icecube-neutrino-observatory-gets-a-major-upgrade-beneath-the-ice/" target="_blank" rel="noopener">The IceCube Neutrino Observatory gets a major upgrade beneath the ice</a>, IceCube, February 2026</li>
+              <li><a href="https://iihe.ac.be/icecube-upgrade-completed-2026/" target="_blank" rel="noopener">IceCube Upgrade completed</a>, IIHE (ULB–VUB), 2026</li>
+              <li><a href="https://www.nobelprize.org/prizes/physics/2026/summary/" target="_blank" rel="noopener">The Nobel Prize in Physics 2026</a>, NobelPrize.org</li>
+            </ol>
           </div>
 
           <p class="chapter-links"><a href="https://icecube.wisc.edu/science/publications/">IceCube publications →</a> <a href="https://icecube.wisc.edu/news/">IceCube news →</a> <a href="https://icecube.wisc.edu/">IceCube website →</a></p>
@@ -450,12 +521,12 @@
         <div class="wrap">
           <div class="split">
             <div>
-              <p class="lead">SFU's Professor Matthias Danninger is the scientific spokesperson of the P&#8209;ONE collaboration. SFU also built precision calibration detectors and high-power light emitters that measure how light travels through the seawater.</p>
-              <p>P&#8209;ONE uses the same technique as IceCube, but in the deep ocean. Its site in the northeast Pacific sees a different part of the sky to IceCube, so the two complement each other, and it can plug into Ocean Networks Canada's existing seafloor network for power and data. The ocean also brings its own challenges: the lines sway in the currents, and the water glows faintly from radioactive potassium and bioluminescent sea life.</p>
+              <p class="lead">SFU's Professor <a href="people.html#danninger">Matthias Danninger</a> is the scientific spokesperson of the P&#8209;ONE collaboration.<sup class="ref"><a href="https://www.pacific-neutrino.org/press/detail/matthias-danninger-elected-as-next-p-one-spokesperson" target="_blank" rel="noopener" title="Matthias Danninger elected as next P-ONE spokesperson">1</a>,<a href="https://www.sfu.ca/sfunews/stories/2026/07/q-a-explainer--what-is-a-neutrino-telescope-and-why-was-one-test.html" target="_blank" rel="noopener" title="Q&amp;A explainer: what is a neutrino telescope, and why was one tested in a Vancouver harbour?">2</a></sup> SFU also built precision calibration detectors and high-power light emitters that measure how light travels through the seawater.</p>
+              <p>P&#8209;ONE uses the same technique as IceCube, but in the deep ocean. Its site in the northeast Pacific sees a different part of the sky to IceCube, so the two complement each other, and it can plug into Ocean Networks Canada's existing seafloor network for power and data.<sup class="ref"><a href="https://doi.org/10.1038/s41550-020-1182-4" target="_blank" rel="noopener" title="The Pacific Ocean Neutrino Experiment">3</a></sup> The ocean also brings its own challenges: the lines sway in the currents, and the water glows faintly from radioactive potassium and bioluminescent sea life.<sup class="ref"><a href="https://doi.org/10.1038/s41550-020-1182-4" target="_blank" rel="noopener" title="The Pacific Ocean Neutrino Experiment">3</a></sup></p>
             </div>
             <figure class="photo-figure">
               <img src="images/p-one-underwater.jpg" alt="Glass sphere optical modules on the P-ONE line, seen just below the water surface.">
-              <figcaption>Modules on the first line under water during the June 2026 test. Each optical module's glass sphere holds 16 small photomultiplier tubes, eight in each half, that pick up faint flashes of light.
+              <figcaption>Modules on the first line under water during the June 2026 test. Each optical module's glass sphere holds 16 small photomultiplier tubes, eight in each half, that pick up faint flashes of light.<sup class="ref"><a href="https://pos.sissa.it/501/1087/" target="_blank" rel="noopener" title="Design of the Pacific Ocean Neutrino Experiment's first detector line">4</a></sup>
                 <span class="credit">Photo: Simon Fraser University, from <a href="https://www.sfu.ca/physics/news-events/news/2026/neutrino-telescope.html">SFU News</a></span></figcaption>
             </figure>
           </div>
@@ -556,12 +627,12 @@
                 <text x="822" y="371" dy="1" fill="#ffffff">3</text>
               </g>
             </svg>
-            <figcaption>Artistic interpretation. The numbers match the steps.</figcaption>
+            <figcaption>AI-rtistic interpretation. The numbers match the steps.</figcaption>
           </figure>
           <ol class="steps">
             <li><h4>A neutrino interacts</h4><p>Now and then a neutrino interacts in the seawater or the seafloor rock, producing charged particles such as a muon.</p></li>
             <li><h4>Light is made</h4><p>Those particles travel faster than light does in water, so they give off faint blue Cherenkov light in a cone, at about 42° to their path.</p></li>
-            <li><h4>Modules detect it</h4><p>Optical modules spaced along mooring lines about one kilometre long pick up the light. When and where it arrives shows the particle's direction and energy.</p></li>
+            <li><h4>Modules detect it</h4><p>Optical modules spaced along mooring lines about one kilometre long pick up the light.<sup class="ref"><a href="https://www.sfu.ca/sfunews/stories/2026/07/q-a-explainer--what-is-a-neutrino-telescope-and-why-was-one-test.html" target="_blank" rel="noopener" title="Q&amp;A explainer: what is a neutrino telescope, and why was one tested in a Vancouver harbour?">2</a></sup> When and where it arrives shows the particle's direction and energy.</p></li>
           </ol>
           </div>
 
@@ -570,13 +641,13 @@
           <div class="video-feature">
             <figure class="video-figure">
               <div class="video-frame">
-                <iframe src="https://player.vimeo.com/video/1204625788?dnt=1&amp;byline=0&amp;portrait=0&amp;title=0" title="P-ONE neutrino telescope test, Granville Island, Vancouver" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                <iframe src="https://player.vimeo.com/video/1204625788?dnt=1&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;byline=0&amp;portrait=0&amp;title=0" title="P-ONE neutrino telescope test, Granville Island, Vancouver" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
               </div>
               <figcaption>Video: SFU Communications &amp; Marketing, from SFU News</figcaption>
             </figure>
             <div>
               <h3 class="subhead">Watch the first line go into the water</h3>
-              <p>In June 2026, P&#8209;ONE&#8209;1 was lowered into the harbour at Granville Island in Vancouver for its last test before deployment. It spent more than 12 hours in cold seawater, and every system worked.</p>
+              <p>In June 2026, P&#8209;ONE&#8209;1 was lowered into the harbour at Granville Island in Vancouver for its last test before deployment. It spent more than 12 hours in cold seawater, and every system worked.<sup class="ref"><a href="https://www.pacific-neutrino.org/main-menu/news/successful-wet-test-of-p-one-1-in-vancouvers-granville-island" target="_blank" rel="noopener" title="Successful wet test of P-ONE-1 in Vancouver's Granville Island">6</a></sup></p>
               <p><a href="https://www.sfu.ca/sfunews/stories/2026/07/q-a-explainer--what-is-a-neutrino-telescope-and-why-was-one-test.html">Read the Q&amp;A: what is a neutrino telescope, and why was one tested in a Vancouver harbour? →</a></p>
             </div>
           </div>
@@ -599,7 +670,7 @@
             <div class="callout-stat"><strong>TRIUMF</strong><span>where P&#8209;ONE's lines are built</span></div>
             <div>
               <h3>Building P&#8209;ONE in Vancouver</h3>
-              <p>P&#8209;ONE's detector lines are put together in the cleanroom at TRIUMF, Canada's particle accelerator centre, where SFU group members work on hardware, integration and assembly. Parts arrive from Canada, the US and Europe, including SFU's calibration instruments. Each one is tested, then mounted on the kilometre-long backbone cable, and every power and optical-fibre connection is checked as the line comes together. P&#8209;ONE&#8209;1 was completed this way in April 2026. Next, the demonstrator's lines, up to six in all, will be assembled and tested at TRIUMF in 2027–2028.</p>
+              <p>P&#8209;ONE's detector lines are put together in the cleanroom at TRIUMF, Canada's particle accelerator centre, where SFU group members work on hardware, integration and assembly. Parts arrive from Canada, the US and Europe, including SFU's calibration instruments. Each one is tested, then mounted on the kilometre-long backbone cable, and every power and optical-fibre connection is checked as the line comes together. P&#8209;ONE&#8209;1 was completed this way in April 2026.<sup class="ref"><a href="https://www.pacific-neutrino.org/main-menu/news/successful-integration-of-first-detector-line-p-one-1-1" target="_blank" rel="noopener" title="Successful integration of first detector line P-ONE-1">5</a></sup> Next, the demonstrator's four lines will be assembled and tested at TRIUMF in 2027–2028.</p>
             </div>
           </div>
 
@@ -608,22 +679,73 @@
               <h3 class="subhead">Where things stand</h3>
               <!-- Timeline: add a <li> when the project reaches a milestone. class="done" for finished steps, class="now" for the current one. -->
               <ol class="timeline">
-                <li class="done"><span class="when">April 2026</span>The first line, P&#8209;ONE&#8209;1, is fully assembled and integrated in the cleanroom at TRIUMF.</li>
-                <li class="done"><span class="when">June 2026</span>Wet test at Granville Island in Vancouver: over 12 hours in cold seawater, with every system working.</li>
-                <li class="now"><span class="when">Next</span>Deployment about 2,700 metres down in the Cascadia Basin, on a new 30 km cable extension from Ocean Networks Canada's NEPTUNE observatory. Data-taking starts straight away.</li>
-                <li><span class="when">2027–2028</span>The lines of a demonstrator, up to six in all, are assembled and tested at TRIUMF.</li>
-                <li><span class="when">After that</span>If funded, a full detector of around 100 lines.</li>
+                <li class="done"><span class="when">April 2026</span>The first line, P&#8209;ONE&#8209;1, is fully assembled and integrated in the cleanroom at TRIUMF.<sup class="ref"><a href="https://www.pacific-neutrino.org/main-menu/news/successful-integration-of-first-detector-line-p-one-1-1" target="_blank" rel="noopener" title="Successful integration of first detector line P-ONE-1">5</a></sup></li>
+                <li class="done"><span class="when">June 2026</span>Wet test at Granville Island in Vancouver: over 12 hours in cold seawater, with every system working.<sup class="ref"><a href="https://www.pacific-neutrino.org/main-menu/news/successful-wet-test-of-p-one-1-in-vancouvers-granville-island" target="_blank" rel="noopener" title="Successful wet test of P-ONE-1 in Vancouver's Granville Island">6</a></sup></li>
+                <li class="now"><span class="when">Next</span>Deployment about 2,700 metres down in the Cascadia Basin, on a new 30 km cable extension from Ocean Networks Canada's NEPTUNE observatory.<sup class="ref"><a href="https://www.sfu.ca/sfunews/stories/2026/07/q-a-explainer--what-is-a-neutrino-telescope-and-why-was-one-test.html" target="_blank" rel="noopener" title="Q&amp;A explainer: what is a neutrino telescope, and why was one tested in a Vancouver harbour?">2</a>,<a href="https://www.pacific-neutrino.org/main-menu/news/successful-wet-test-of-p-one-1-in-vancouvers-granville-island" target="_blank" rel="noopener" title="Successful wet test of P-ONE-1 in Vancouver's Granville Island">6</a></sup> Data-taking starts straight away.</li>
+                <li><span class="when">2027–2028</span>The four lines of a demonstrator are assembled and tested at TRIUMF.</li>
+                <li><span class="when">After that</span>If funded, a full detector of around 100 lines.<sup class="ref"><a href="https://www.sfu.ca/sfunews/stories/2026/07/q-a-explainer--what-is-a-neutrino-telescope-and-why-was-one-test.html" target="_blank" rel="noopener" title="Q&amp;A explainer: what is a neutrino telescope, and why was one tested in a Vancouver harbour?">2</a></sup></li>
               </ol>
             </div>
             <div class="depth-card depth-card-pone" aria-label="P-ONE in numbers">
-              <div><strong>~2,700 m</strong><span>depth of the seafloor at the site</span></div>
-              <div><strong>~1 km</strong><span>length of each line; the first carries 20 modules</span></div>
-              <div><strong>Up to 6</strong><span>lines in the planned demonstrator</span></div>
+              <div><strong>~2,700 m</strong><span>depth of the seafloor at the site<sup class="ref"><a href="https://www.sfu.ca/sfunews/stories/2026/07/q-a-explainer--what-is-a-neutrino-telescope-and-why-was-one-test.html" target="_blank" rel="noopener" title="Q&amp;A explainer: what is a neutrino telescope, and why was one tested in a Vancouver harbour?">2</a></sup></span></div>
+              <div><strong>~1 km</strong><span>length of each line; the first carries 20 modules<sup class="ref"><a href="https://pos.sissa.it/501/1087/" target="_blank" rel="noopener" title="Design of the Pacific Ocean Neutrino Experiment's first detector line">4</a></sup></span></div>
+              <div><strong>4</strong><span>lines in the planned demonstrator</span></div>
             </div>
+          </div>
+
+          <!-- Sources: the numbers in the text above link to these. Keep the numbering in step when adding one. -->
+          <div class="sources">
+            <h4>Sources</h4>
+            <ol>
+              <li><a href="https://www.pacific-neutrino.org/press/detail/matthias-danninger-elected-as-next-p-one-spokesperson" target="_blank" rel="noopener">Matthias Danninger elected as next P-ONE spokesperson</a>, P-ONE Collaboration</li>
+              <li><a href="https://www.sfu.ca/sfunews/stories/2026/07/q-a-explainer--what-is-a-neutrino-telescope-and-why-was-one-test.html" target="_blank" rel="noopener">Q&amp;A explainer: what is a neutrino telescope, and why was one tested in a Vancouver harbour?</a>, SFU News, August 2026</li>
+              <li><a href="https://doi.org/10.1038/s41550-020-1182-4" target="_blank" rel="noopener">The Pacific Ocean Neutrino Experiment</a>, Nature Astronomy 4, 913 (2020)</li>
+              <li><a href="https://pos.sissa.it/501/1087/" target="_blank" rel="noopener">Design of the Pacific Ocean Neutrino Experiment's first detector line</a>, Proceedings of ICRC 2025</li>
+              <li><a href="https://www.pacific-neutrino.org/main-menu/news/successful-integration-of-first-detector-line-p-one-1-1" target="_blank" rel="noopener">Successful integration of first detector line P-ONE-1</a>, P-ONE Collaboration, 2026</li>
+              <li><a href="https://www.pacific-neutrino.org/main-menu/news/successful-wet-test-of-p-one-1-in-vancouvers-granville-island" target="_blank" rel="noopener">Successful wet test of P-ONE-1 in Vancouver's Granville Island</a>, P-ONE Collaboration, July 2026</li>
+            </ol>
           </div>
 
           <p class="chapter-links"><a href="https://www.pacific-neutrino.org/main-menu/publications">P&#8209;ONE publications →</a> <a href="https://www.pacific-neutrino.org/main-menu/news">P&#8209;ONE news →</a> <a href="https://www.sfu.ca/physics/news-events/news/2026/neutrino-telescope.html">SFU News story →</a></p>
         </div>
+      </div>
+    </section>
+
+    </div>
+    <!-- end .chapters -->
+
+    <!-- TRIUMF: how SFU and the group are tied to TRIUMF. One card per experiment with a TRIUMF link (none is publicly
+         documented for IceCube, so it has no card). The numbers link to the sources listed below. -->
+    <section id="triumf" class="research-section section-alt">
+      <div class="wrap">
+        <h2 class="section-title">SFU and TRIUMF</h2>
+        <p class="lead">TRIUMF, Canada's particle accelerator centre in Vancouver, began in 1968 as the TRI-University Meson Facility of UBC, the University of Victoria and SFU. SFU is still one of its 21 member universities,<sup class="ref"><a href="https://www.triumf.ca/home/about-triumf/partners/university-owners" target="_blank" rel="noopener" title="TRIUMF: University members">1</a></sup> and the group works with TRIUMF on two of its three experiments.</p>
+        <div class="contact-grid">
+          <div class="contact">
+            <h3>ATLAS</h3>
+            <p>Canada's ATLAS Tier-1 data centre was at TRIUMF from 2007 to 2018, then moved to SFU's Burnaby campus in 2019, where TRIUMF runs it.<sup class="ref"><a href="https://discoverourlab.triumf.ca/tour-our-lab/main-building/tier-1-data/" target="_blank" rel="noopener" title="TRIUMF: Tier-1 data centre">2</a></sup> A consortium of ten institutions led by SFU and TRIUMF operates it, and it supplies about 10% of ATLAS's Tier-1 computing worldwide.<sup class="ref"><a href="https://discoverourlab.triumf.ca/tour-our-lab/main-building/tier-1-data/" target="_blank" rel="noopener" title="TRIUMF: Tier-1 data centre">2</a>,<a href="https://www.sfu.ca/sfunews/stories/2026/03/sfu-awarded-12_3-million-from-CFI-for-clean-energy-and-particle-physics-research.html" target="_blank" rel="noopener" title="SFU News: CFI funding for the Tier-1 Data Centre">3</a></sup> SFU and TRIUMF also build petals together for the new ATLAS tracker.<sup class="ref"><a href="https://www.sfu.ca/sfunews/stories/2026/06/searching-for-the-next-higgs-boson--sfu-team-drives-global-effor.html" target="_blank" rel="noopener" title="SFU News: Searching for the next Higgs boson">4</a></sup></p>
+            <p><a href="#itk">The new tracker</a> &nbsp; <a href="computing.html">Computing at SFU</a></p>
+          </div>
+          <div class="contact contact-pone">
+            <h3>P&#8209;ONE</h3>
+            <p>P&#8209;ONE's detector lines are assembled and tested in TRIUMF's cleanroom: P&#8209;ONE&#8209;1 in 2026, and the demonstrator's lines in 2027–2028.<sup class="ref"><a href="https://www.pacific-neutrino.org/main-menu/news/successful-integration-of-first-detector-line-p-one-1-1" target="_blank" rel="noopener" title="P-ONE: Successful integration of first detector line P-ONE-1">5</a></sup> TRIUMF also provides site infrastructure in Vancouver, and P&#8209;ONE's data acquisition system is largely a TRIUMF deliverable.<sup class="ref"><a href="https://arxiv.org/abs/2507.11368" target="_blank" rel="noopener" title="Community Report from the 2025 SNOLAB Future Projects Workshop">6</a></sup></p>
+            <p><a href="#p-one-triumf">Building the lines at TRIUMF</a></p>
+          </div>
+        </div>
+
+        <div class="sources">
+          <h4>Sources</h4>
+          <ol>
+            <li><a href="https://www.triumf.ca/home/about-triumf/partners/university-owners" target="_blank" rel="noopener">University members</a>, TRIUMF</li>
+            <li><a href="https://discoverourlab.triumf.ca/tour-our-lab/main-building/tier-1-data/" target="_blank" rel="noopener">Tier-1 data centre</a>, TRIUMF</li>
+            <li><a href="https://www.sfu.ca/sfunews/stories/2026/03/sfu-awarded-12_3-million-from-CFI-for-clean-energy-and-particle-physics-research.html" target="_blank" rel="noopener">SFU awarded $12.3 million from CFI for clean energy and particle physics research</a>, SFU News, March 2026</li>
+            <li><a href="https://www.sfu.ca/sfunews/stories/2026/06/searching-for-the-next-higgs-boson--sfu-team-drives-global-effor.html" target="_blank" rel="noopener">Searching for the next Higgs boson: SFU team drives global effort to boost science experiment at Large Hadron Collider</a>, SFU News, June 2026</li>
+            <li><a href="https://www.pacific-neutrino.org/main-menu/news/successful-integration-of-first-detector-line-p-one-1-1" target="_blank" rel="noopener">Successful integration of first detector line P-ONE-1</a>, P-ONE Collaboration, 2026</li>
+            <li><a href="https://arxiv.org/abs/2507.11368" target="_blank" rel="noopener">Community Report from the 2025 SNOLAB Future Projects Workshop</a>, arXiv:2507.11368 (2025)</li>
+          </ol>
+        </div>
+
+        <p class="chapter-links"><a href="https://www.triumf.ca/">TRIUMF website →</a></p>
       </div>
     </section>
 
@@ -642,9 +764,11 @@
   <footer class="site-footer">
     <div class="wrap">
       <span>High Energy Physics Group, Department of Physics, Simon Fraser University, Burnaby, BC</span>
-      <span><a href="https://www.sfu.ca/physics.html">SFU Physics</a> · <a href="https://github.com/annabellegrimes/sfu-hep-website">Edit this site on GitHub</a></span>
+      <span><a href="https://www.sfu.ca/physics.html">SFU Physics</a></span>
     </div>
   </footer>
   <!-- END FOOTER -->
+
+  <script src="js/project-switch.js"></script>
 </body>
 </html>
